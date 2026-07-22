@@ -27,9 +27,11 @@ EXT21_MODULES = [
             {
                 "heading": "Turbocharger Inspection and Maintenance",
                 "body": "Turbocharger bearings operate at extremely high rotational speeds and temperatures, requiring reliable oil supply and cooling; oil starvation at shutdown (from turning the engine off abruptly after high-power operation) can cause coking of oil in the hot bearing housing, leading to bearing damage. Inspections check for excessive shaft play, exhaust leaks at turbine housing connections, and proper wastegate operation. Turbocharger failure can allow oil or debris into the intake or exhaust system, so post-failure inspection typically includes checking downstream components for contamination."
-            }
+            },
+      {"heading": "Overboost and Wastegate Troubleshooting", "body": "A turbocharged reciprocating engine that overboosts (manifold pressure exceeds the placarded limit) usually indicates a stuck or misadjusted wastegate valve failing to bypass enough exhaust gas away from the turbine, or a wastegate actuator/controller fault. Conversely, an engine that can't reach rated manifold pressure at altitude may have a wastegate stuck open, an exhaust leak upstream of the turbine reducing available energy to spin it, or a worn turbocharger bearing allowing excess blade-tip clearance and reduced compressor efficiency. Overboost events, even brief ones, should be logged and may require inspection per the engine manual due to potential detonation damage."}
         ],
         "quiz": [
+      {"q": "A turbocharged engine that repeatedly exceeds its placarded manifold pressure limit (overboost) most likely has:", "choices": ["A perfectly functioning wastegate", "A stuck/misadjusted wastegate valve or actuator fault failing to bypass enough exhaust gas", "Too little fuel", "A cracked windshield"], "answer": 1, "explain": "Overboost typically points to a wastegate that isn't bypassing enough exhaust gas away from the turbine, whether from a stuck valve or actuator/controller fault."},
             {
                 "q": "What powers a turbocharger's compressor wheel?",
                 "choices": [
@@ -103,9 +105,11 @@ EXT21_MODULES = [
             {
                 "heading": "FADEC Maintenance and Software Considerations",
                 "body": "FADEC maintenance includes verifying proper software configuration/version matches the approved engine configuration, checking sensor wiring and connectors for corrosion or damage (a common source of intermittent faults), and reviewing fault logs stored in the FADEC's non-volatile memory during troubleshooting. Software updates to FADEC systems require strict configuration control, since incorrect software loading can result in improper engine control and is a certification-critical concern."
-            }
+            },
+      {"heading": "FADEC Channel Redundancy and Fault Logic", "body": "Most FADEC systems use dual redundant channels (A and B) so a single channel fault doesn't cause loss of engine control - the system automatically switches to the healthy channel and annunciates the fault for maintenance action. A FADEC fault message doesn't always mean an engine problem; it can indicate a sensor, wiring, or the FADEC computer itself. Maintenance action requires pulling fault codes from the FADEC's non-volatile memory and cross-referencing the troubleshooting manual's fault isolation procedure rather than guessing based on symptoms alone."}
         ],
         "quiz": [
+      {"q": "In a dual-channel FADEC system, if Channel A develops a fault, the typical result is:", "choices": ["Complete loss of engine control", "Automatic switchover to the healthy Channel B with a fault annunciation for maintenance", "The engine shuts down immediately", "No effect on engine operation or annunciation"], "answer": 1, "explain": "Dual-channel FADEC redundancy allows automatic switchover to the healthy channel while annunciating the fault for follow-up maintenance."},
             {
                 "q": "What does FADEC stand for?",
                 "choices": [
@@ -179,9 +183,11 @@ EXT21_MODULES = [
             {
                 "heading": "Inspection and Servicing Requirements",
                 "body": "Emergency equipment (extinguishers, oxygen bottles, slides, locator transmitters/ELTs) is tracked on a dedicated inspection schedule separate from routine airframe inspections, since expiration dates (for chemical generators, ELT batteries, hydrostatic test dates for cylinders) drive replacement independent of flight hours. A missing, expired, or discharged piece of required emergency equipment typically makes the aircraft unairworthy for the affected operation until corrected."
-            }
+            },
+      {"heading": "Emergency Equipment Inspection Intervals", "body": "Emergency equipment (fire extinguishers, oxygen bottles, escape slides/ropes, ELTs) has its own strict inspection/service-life tracking independent of the aircraft's general maintenance schedule - a fire extinguisher past its hydrostatic test date or an ELT battery past its replace-by date must be removed from service even if the aircraft is otherwise airworthy in every other respect. These items are tracked individually by serial number and expiration date in many maintenance tracking systems specifically because a missed emergency-equipment expiration is a common audit/inspection finding."}
         ],
         "quiz": [
+      {"q": "Why are emergency equipment items (extinguishers, ELT batteries, escape slides) tracked individually by expiration date?", "choices": ["It is not actually required", "Because expired emergency equipment must be removed from service even if the rest of the aircraft is airworthy", "Only for cosmetic reasons", "They never expire"], "answer": 1, "explain": "Emergency equipment has independent service-life/expiration requirements, and expired items must be replaced regardless of the aircraft's overall airworthiness status."},
             {
                 "q": "Why might a fire extinguisher bottle show correct pressure but insufficient agent?",
                 "choices": [
@@ -255,9 +261,11 @@ EXT21_MODULES = [
             {
                 "heading": "GSE Safety and FOD Prevention",
                 "body": "Ground support equipment left near active aircraft (chocks, stands, carts) not properly secured or stored becomes a foreign object debris (FOD) and collision hazard, particularly in engine intake/exhaust danger zones. GSE operators must maintain safe clearance from wingtips, engine inlets, and control surfaces, and equipment must be inspected for damage, proper tire condition/pressure (for towed carts), and functioning brakes before use around aircraft."
-            }
+            },
+      {"heading": "GSE Pre-Use Inspection Discipline", "body": "Ground support equipment (tow bars, GPUs, air start units, deicing trucks, belt loaders) requires a documented pre-use inspection - a damaged or improperly rated tow bar/shear pin can cause nose gear structural damage during towing, and a GPU with degraded voltage regulation can damage sensitive avionics on aircraft power-up. Any GSE involved in an incident (a bump, overspeed tow, contact with the aircraft) must be reported and the aircraft inspected per the AMM's ground-handling damage assessment procedure before further dispatch, even if no obvious damage is visible."}
         ],
         "quiz": [
+      {"q": "If ground support equipment makes accidental contact with an aircraft during towing/servicing, the correct response is to:", "choices": ["Ignore it if no damage is visible", "Report it and have the aircraft inspected per the AMM's ground-handling damage procedure", "Only note it informally", "Continue normal dispatch without inspection"], "answer": 1, "explain": "Any GSE contact incident requires formal reporting and an inspection per the AMM's damage assessment procedure, since damage may not be visible externally."},
             {
                 "q": "Why must GPU output specifications be verified before connecting to an aircraft?",
                 "choices": [
@@ -331,9 +339,11 @@ EXT21_MODULES = [
             {
                 "heading": "Fuel Quantity System Troubleshooting",
                 "body": "Common fuel quantity indication faults include probe wiring faults (opens/shorts causing full-scale or zero readings), a failed compensator unit, and probe contamination (water or debris affecting capacitance readings). Troubleshooting typically starts with comparing indicated quantity against a manual dripstick check; a significant discrepancy points to a system fault rather than an actual fuel quantity difference, and isolating individual tank probes (where multiple probes exist per tank) helps pinpoint a faulty unit."
-            }
+            },
+      {"heading": "Capacitance Probe System Troubleshooting", "body": "Capacitance-type fuel quantity systems calculate fuel amount from the dielectric difference between fuel and air sensed by tank probes - a probe with a cracked or contaminated element, or wiring with degraded insulation resistance, produces an erroneous reading (often reading full, empty, or fluctuating erratically) rather than a gradual drift. Cross-check any suspect fuel quantity indication against a manual dripstick/tab measurement or a known fuel-load calculation (fuel added minus fuel burned) before condemning the indicating system - the discrepancy check itself often points directly to which probe or compensator is faulty."}
         ],
         "quiz": [
+      {"q": "A capacitance-type fuel quantity indication that fluctuates erratically rather than drifting slowly most likely indicates:", "choices": ["Normal fuel consumption", "A probe wiring or contamination issue causing an erroneous signal", "The tank is completely full", "A software update is needed only"], "answer": 1, "explain": "Erratic fluctuation (versus a slow drift matching fuel burn) points to an electrical/probe fault rather than an actual changing fuel level."},
             {
                 "q": "How does a capacitance-type fuel probe sense fuel level?",
                 "choices": [

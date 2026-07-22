@@ -21,9 +21,11 @@ EXT19_MODULES = [
             {
                 "heading": "Weld Inspection and Repair Criteria",
                 "body": "Aircraft welds are inspected visually for uniform ripple pattern, complete penetration, absence of undercut, and no evidence of porosity, cracks, or slag inclusion. A properly welded joint should show a fine, evenly spaced ripple with no icicles or lumps. Cracked or heavily corroded steel tubing structures are generally repaired by welding in a new section (splice) rather than patching, following AC 43.13-1B guidance for tubing structure repairs, including proper overlap and stress-relieving of the heat-affected zone where required."
-            }
+            },
+      {"heading": "Gas Welding Flame and Joint Prep", "body": "Oxy-acetylene welding on aircraft steel tubing requires a neutral flame (balanced oxygen/acetylene, no excess of either) - a carburizing (excess acetylene, feathery flame) or oxidizing (excess oxygen, hissing flame) setting produces a weak, brittle, or porous weld even if it looks acceptable visually. Joint fit-up (proper gap, clean bevel, tubes properly aligned/tacked before final welding) matters as much as flame adjustment; a rushed fit-up leads to incomplete penetration that a visual inspection after cooling may not reveal without further NDT."}
         ],
         "quiz": [
+      {"q": "Using an oxidizing flame setting (excess oxygen) during oxy-acetylene welding of aircraft steel tubing typically results in:", "choices": ["A stronger weld than normal", "A weak, brittle, or porous weld despite possibly looking acceptable visually", "No effect on weld quality", "Faster welding with no downside"], "answer": 1, "explain": "An oxidizing flame setting produces a weld with reduced strength/quality due to oxidation of the weld metal, even if the visual appearance seems acceptable."},
             {
                 "q": "What is the safe maximum acetylene pressure due to explosion risk?",
                 "choices": [
@@ -97,9 +99,11 @@ EXT19_MODULES = [
             {
                 "heading": "Bonding Resistance Testing",
                 "body": "Bonding resistance is measured with a low-resistance ohmmeter (milliohmmeter) capable of accurate readings in the milliohm range, since standard multimeters lack sufficient resolution and accuracy for bonding checks. Typical acceptable bonding resistance across a strap is a fraction of an ohm (often less than 0.003 ohm for critical fuel-system bonding, higher for general structure per manufacturer data). Corrosion at bonding jumper attachment points is a common cause of high resistance readings and failed bonding checks; cleaning and re-torquing the attachment often restores continuity."
-            }
+            },
+      {"heading": "Bonding Resistance Verification", "body": "Bonding straps and jumpers (connecting control surfaces, engine mounts, and other components to the aircraft's main structure) are checked with a low-resistance milliohmmeter, not a standard multimeter, since bonding resistance limits are typically specified in milliohms and a standard meter lacks the resolution/accuracy needed. A bonding strap with excessive resistance (from corrosion at the terminal, a partially broken strand, or a loose fastener) compromises lightning-strike current path and static discharge, potentially allowing damaging arcing at a joint that should instead conduct the current safely away."}
         ],
         "quiz": [
+      {"q": "Why is a milliohmmeter used to check bonding strap resistance rather than a standard multimeter?", "choices": ["It looks more professional", "Bonding resistance limits are specified in milliohms, requiring the finer resolution a standard multimeter lacks", "Multimeters cannot measure resistance at all", "Milliohmmeters are cheaper"], "answer": 1, "explain": "Bonding resistance specifications are typically in the milliohm range, well below the resolution of a standard multimeter, requiring a dedicated low-resistance meter."},
             {
                 "q": "What is the primary purpose of electrical bonding jumpers on an airframe?",
                 "choices": [
@@ -173,9 +177,11 @@ EXT19_MODULES = [
             {
                 "heading": "Inspection Documentation and Sign-off",
                 "body": "A completed inspection requires a written, signed statement in the maintenance records including the type of inspection performed, aircraft total time, and a statement that the aircraft was found to be in airworthy condition (or a list of discrepancies if not airworthy). For an annual inspection, only an IA (Inspection Authorization holder) may perform and approve for return to service; a mechanic with an A&P certificate but no IA can perform the inspection but cannot approve it for return to service without IA sign-off."
-            }
+            },
+      {"heading": "Inspection Program Escalation Logic", "body": "Scheduled inspection programs (annual, 100-hour, progressive, or manufacturer-specific) are designed so that findings at one inspection level can escalate scope - if a routine check reveals unexpected wear or damage, the inspector isn't limited to the checklist items for that inspection tier and must expand the inspection scope to determine the full extent of the problem. This is why an 'annual inspection' checklist is a minimum starting point, not a ceiling - discovering corrosion or a crack during a routine item requires following it to its full extent, even if that means inspecting areas not originally on that inspection's checklist."}
         ],
         "quiz": [
+      {"q": "If a mechanic performing a routine 100-hour inspection discovers unexpected corrosion, the correct response is to:", "choices": ["Ignore it since it wasn't on the checklist", "Expand the inspection scope as needed to determine the full extent of the finding", "Wait until the next annual inspection", "Note it only if convenient"], "answer": 1, "explain": "Scheduled inspection checklists are a minimum baseline; any unexpected finding requires expanding the inspection scope to fully assess it, regardless of the original checklist scope."},
             {
                 "q": "How often is an annual inspection required under 14 CFR 91.409?",
                 "choices": [
@@ -249,9 +255,11 @@ EXT19_MODULES = [
             {
                 "heading": "Fabric Strength Testing",
                 "body": "Fabric strength is checked periodically using a calibrated fabric tester (punch-type tester) that measures the force required to punch through the fabric; results are compared against the minimum strength value specified for the aircraft's category (typically listed in pounds per inch of tear strength, e.g., a common minimum threshold near 46-56 lbs depending on aircraft category and original certification basis). Fabric that tests below the minimum strength is considered unairworthy and must be re-covered before further flight, even if it appears visually sound."
-            }
+            },
+      {"heading": "Fabric Condition Testing", "body": "Fabric-covered aircraft skin strength is checked periodically with a calibrated fabric-strength tester (punch tester) that measures the force needed to puncture the fabric, compared against the minimum strength required by the fabric's process specification (e.g., certain STC'd polyester fabric systems). UV exposure and age progressively degrade fabric strength even without visible damage, which is why punch testing - not just a visual check - is required at defined intervals. A fabric that fails the punch test in any tested area requires recover or repair before further flight, regardless of how the fabric looks visually."}
         ],
         "quiz": [
+      {"q": "Why is a calibrated punch (fabric-strength) test required on fabric-covered aircraft rather than relying on visual inspection alone?", "choices": ["Visual inspection is always sufficient", "UV and age degrade fabric strength even without visible signs of damage", "Punch testing is only cosmetic", "Fabric never degrades with UV exposure"], "answer": 1, "explain": "Fabric can lose significant strength from UV/age exposure without any visible sign of deterioration, making a quantitative punch test necessary."},
             {
                 "q": "What synthetic fabric type is commonly used in modern aircraft covering systems?",
                 "choices": [
@@ -325,9 +333,11 @@ EXT19_MODULES = [
             {
                 "heading": "Borescope and Video Trend Records",
                 "body": "Periodic borescope inspections, recorded on video or as still images with clear reference markers, allow direct visual comparison of internal engine condition (turbine blades, combustor liner, compressor blades) across multiple inspection intervals. Maintaining a photographic/video trend history lets technicians distinguish between a pre-existing minor blemish and genuinely new or progressing damage, preventing both over-reaction to old, stable findings and under-reaction to newly developing defects."
-            }
+            },
+      {"heading": "Establishing a Reliable Baseline", "body": "Engine condition monitoring is only as good as its baseline - trend data must be gathered under consistent conditions (similar power setting, corrected for ambient temperature/altitude/bleed loads) or the comparison is meaningless. A new engine or one just out of overhaul needs several flights to establish a stable baseline before trend deviations become meaningful; comparing a freshly-installed engine's first flight data against a fleet-average baseline can produce a false alarm simply due to normal break-in characteristics. Data outliers from clearly abnormal flights (aborted takeoff, unusual weather) should be flagged and excluded from trend analysis rather than skewing the baseline."}
         ],
         "quiz": [
+      {"q": "Why is a newly overhauled engine's first-flight data not immediately compared against long-term fleet trend baselines?", "choices": ["New engines never need monitoring", "Break-in characteristics can cause normal early readings to look like a deviation, risking a false alarm", "The data is always identical to the fleet average", "Fleet baselines don't apply to any engines"], "answer": 1, "explain": "New/overhauled engines have break-in characteristics that can appear as a deviation from established fleet trends, so a stable individual baseline is established first."},
             {
                 "q": "Why is trend monitoring more valuable than a single data point?",
                 "choices": [
