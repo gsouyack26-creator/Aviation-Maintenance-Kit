@@ -141,6 +141,7 @@ header{background:var(--bg2);padding:1rem 1.5rem;border-bottom:2px solid var(--a
 header h1{font-size:1.4rem;flex:1}
 .nav-btn{background:var(--bg3);border:none;color:var(--txt);padding:0.4rem 0.8rem;border-radius:6px;cursor:pointer;font-size:0.85rem}
 .nav-btn:hover,.nav-btn.active{background:var(--accent);color:#fff}
+.nav-btn:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
 .card{background:var(--bg2);border-radius:var(--rad);padding:1.5rem;margin-bottom:1rem;border:1px solid var(--bg3)}
 .card h2{margin-bottom:0.8rem;color:var(--accent2)}
 .card h3{margin:1rem 0 0.5rem;color:var(--warn)}
@@ -182,6 +183,7 @@ input[type=text],input[type=search]{background:var(--bg);border:1px solid var(--
 @media print{body{background:#fff;color:#000}.card{border:1px solid #ccc}header,.nav-btn{display:none}}
 .sr-only-focusable{position:absolute;left:-9999px;top:0;background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:0 0 8px 0;z-index:10000}
 .sr-only-focusable:focus{left:0}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
 """
 
 def build_js():

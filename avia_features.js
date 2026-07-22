@@ -25,6 +25,7 @@
   + "#cmdp.on{display:block}"
   + "#cmdp .box{max-width:560px;margin:0 auto;background:var(--bg2);border:1px solid var(--accent);border-radius:12px;overflow:hidden}"
   + "#cmdp input{width:100%;padding:1rem;font-size:1.1rem;background:var(--bg2);border:none;border-bottom:1px solid var(--bg3);color:var(--txt);outline:none}"
+  + "#cmdp input:focus-visible{outline:2px solid var(--accent2);outline-offset:-2px}"
   + "#cmdp .res{max-height:50vh;overflow:auto}"
   + "#cmdp .ci{padding:.7rem 1rem;cursor:pointer;display:flex;gap:.6rem;align-items:center}"
   + "#cmdp .ci.sel,#cmdp .ci:hover{background:var(--accent);color:#fff}";
