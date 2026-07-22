@@ -1,0 +1,9 @@
+line-length = 200
+
+[lint]
+# E402 (module import not at top of file) is intentional in this codebase:
+# - academy_data.py appends "Wave N expansion" merge blocks at file end, each
+#   importing its own academy_extN module right before merging its data in.
+# - build_aviation_academy.py must call sys.path.insert(0, DIR) before its
+#   local imports so they resolve correctly regardless of invocation cwd.
+ignore = ["E402"]

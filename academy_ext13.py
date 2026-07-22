@@ -1,0 +1,144 @@
+"""Aviation Maintenance Academy - Wave 7 content expansion pack.
+5 new modules: pneumatic_systems, wiring_harness_repair, cabin_pressurization,
+borescope_inspection, recip_ignition.
+Merged in academy_data.py.
+"""
+
+EXT13_MODULES = [
+    {
+        "id": "pneumatic_systems", "title": "Pneumatic Systems", "track": "airframe", "icon": "&#x1F4A8;",
+        "sections": [
+            {"heading": "Pneumatic System Basics",
+             "body": "Pneumatic systems use compressed air (bleed air from engines, an APU, or a dedicated compressor) to actuate landing gear, brakes, doors, and de-icing boots on many aircraft. Compared to hydraulics, pneumatic systems are lighter and leak-tolerant (air just vents), but less precise for fine positioning and provide no lubrication of moving parts."},
+            {"heading": "Bleed Air Sources",
+             "body": "Bleed air is tapped from compressor stages of a turbine engine, regulated and cooled before use for cabin pressurization, anti-icing, and pneumatic actuation. Bleed valves, pressure regulators, and overheat/overpressure switches protect downstream ducting and components from excessive temperature or pressure."},
+            {"heading": "Pneumatic Deicing Boots",
+             "body": "Pneumatic deicing boots on wing and tail leading edges are inflated in a cyclic sequence to crack and shed ice accumulation, then deflated by vacuum or venturi suction to restore a smooth airfoil surface. Timing sequence and boot condition (cracks, disbonding) are critical inspection items."},
+            {"heading": "Pneumatic System Inspection",
+             "body": "Inspect ducting for leaks (listen/feel for airflow, check for sooting or discoloration indicating a hot leak), check regulators and relief valves for proper setpoints, and verify check valves prevent backflow between independent system sources (e.g., engine bleed vs. APU bleed)."},
+        ],
+        "quiz": [
+            {"q": "Compared to hydraulic systems, pneumatic systems are generally:", "choices": ["Heavier but more precise", "Lighter, leak-tolerant, but less precise", "Only usable on the ground", "Immune to overheat damage"], "answer": 1, "explain": "Pneumatic systems are lighter and can tolerate leaks (air just vents) but are less precise than hydraulics and provide no lubrication."},
+            {"q": "Where does bleed air on a turbine-powered aircraft typically originate?", "choices": ["The exhaust nozzle", "Compressor stages of the engine", "The fuel tank vent", "The landing gear strut"], "answer": 1, "explain": "Bleed air is tapped from compressor stages, then regulated and cooled for downstream use."},
+            {"q": "What is the purpose of the cyclic inflate/deflate sequence in pneumatic deicing boots?", "choices": ["To warm the cabin", "To crack and shed ice buildup on leading edges", "To pressurize the fuselage", "To actuate the landing gear"], "answer": 1, "explain": "Cyclic inflation cracks accumulated ice, which is then shed by airflow; deflation restores a smooth airfoil."},
+            {"q": "A hot bleed air duct leak may be indicated during inspection by:", "choices": ["A shiny, clean duct surface", "Sooting or discoloration near the leak", "Increased hydraulic fluid level", "A drop in battery voltage"], "answer": 1, "explain": "Hot bleed air leaks often discolor or scorch nearby surfaces and insulation, a key visual inspection clue."},
+            {"q": "Why are check valves used between independent bleed air sources (e.g., engine vs. APU)?", "choices": ["To increase system weight", "To prevent backflow between sources", "To cool the bleed air", "To measure fuel flow"], "answer": 1, "explain": "Check valves prevent one bleed source from backfeeding into another, protecting components not designed for reverse flow."},
+        ],
+    },
+    {
+        "id": "wiring_harness_repair", "title": "Wiring Harness Inspection & Repair", "track": "general", "icon": "&#x1F50C;",
+        "sections": [
+            {"heading": "Wire and Harness Construction",
+             "body": "Aircraft wire is sized by AWG (American Wire Gauge) - smaller numbers mean larger conductors and higher current capacity. Harnesses bundle multiple wires with protective sleeving, clamps, and grommets, routed to avoid chafing against structure and to maintain separation from fluid lines and hot components."},
+            {"heading": "Wire Gauge and Ampacity",
+             "body": "Ampacity (safe current-carrying capacity) depends on wire gauge, insulation type, bundle size, and installation altitude/temperature - manufacturer wire charts must be consulted rather than assuming automotive ratings. Undersized wire overheats and can be a fire hazard; oversized wire adds unnecessary weight."},
+            {"heading": "Chafing, Corrosion, and Damage Inspection",
+             "body": "Inspect harnesses for chafed insulation (especially at clamps, pass-throughs, and moving surfaces), corrosion at connector pins, broken or frayed strands, and improper strain relief. Bent pins, loose connector backshells, and missing safety wire on connectors are common discrepancies."},
+            {"heading": "Splicing and Terminal Repair",
+             "body": "Approved wire repairs use crimped terminals or splices with the correct tool, die, and terminal size - never solder splices in flight control or high-vibration areas unless specifically approved, since solder joints can crack under vibration. Proper crimp inspection includes pull-testing and visual/gauge verification of crimp height."},
+        ],
+        "quiz": [
+            {"q": "In AWG wire sizing, a smaller gauge number indicates:", "choices": ["A smaller, lower-capacity conductor", "A larger conductor with higher current capacity", "A different insulation color only", "No relationship to conductor size"], "answer": 1, "explain": "In AWG, smaller numbers correspond to larger conductor diameters and higher current-carrying capacity."},
+            {"q": "Wire ampacity should be determined using:", "choices": ["Automotive wire charts", "Manufacturer/aircraft-specific wire charts", "A fixed number for all wire regardless of gauge", "Only the wire's color code"], "answer": 1, "explain": "Ampacity depends on gauge, insulation, bundle size, and installation conditions - use the applicable aircraft/manufacturer wire chart."},
+            {"q": "Chafing damage on a wiring harness is most likely to occur at:", "choices": ["The center of a straight, unsupported run", "Clamps, pass-throughs, and moving surfaces", "Inside a sealed connector only", "Only at the battery terminal"], "answer": 1, "explain": "Chafing typically occurs where the harness contacts clamps, structure pass-throughs, or moving parts."},
+            {"q": "Why is soldering generally avoided for splices in high-vibration areas?", "choices": ["Solder is too conductive", "Solder joints can crack under vibration", "Solder is not available in the shop", "Soldering is faster than crimping"], "answer": 1, "explain": "Solder joints are relatively rigid and can crack from vibration fatigue; approved crimp splices are preferred in such areas."},
+            {"q": "A proper crimp terminal repair should be verified by:", "choices": ["Visual color of the wire only", "Pull-testing and crimp height verification", "Smelling the connector", "Measuring cabin temperature"], "answer": 1, "explain": "Pull-testing and verifying crimp height/gauge confirm the crimp meets specification and will not fail in service."},
+        ],
+    },
+    {
+        "id": "cabin_pressurization", "title": "Cabin Pressurization Systems", "track": "airframe", "icon": "&#x1F6EB;",
+        "sections": [
+            {"heading": "Why Aircraft Are Pressurized",
+             "body": "At high altitude, ambient pressure and oxygen availability drop below levels the human body can tolerate for extended periods. Pressurization systems maintain a cabin altitude far lower than the aircraft's actual flight altitude - typically keeping cabin altitude at or below 8,000 ft even when cruising at 35,000+ ft."},
+            {"heading": "Pressurization System Components",
+             "body": "Bleed air (or a dedicated compressor on some aircraft) supplies conditioned air to the cabin; outflow valves regulate how much air escapes to control cabin pressure. A pressurization controller schedules cabin altitude as a function of aircraft altitude, and safety/relief valves prevent over- or under-pressurization."},
+            {"heading": "Cabin Differential Pressure",
+             "body": "Differential pressure (the difference between cabin pressure and outside ambient pressure) is a critical structural limit - exceeding the maximum differential can overstress the fuselage. Differential pressure = cabin pressure - ambient (outside) pressure, and must stay within the structural limits published in the aircraft maintenance manual."},
+            {"heading": "Decompression and Safety Systems",
+             "body": "Rapid or explosive decompression can result from structural failure, a door seal failure, or a major outflow valve malfunction. Safety valves are designed to relieve excess positive OR negative differential pressure, and the flight crew relies on cabin altitude warnings and oxygen systems as backups if the primary pressurization schedule fails."},
+        ],
+        "quiz": [
+            {"q": "What is the typical goal for cabin altitude during cruise at high flight altitudes?", "choices": ["Match the actual flight altitude exactly", "Keep cabin altitude at or below about 8,000 ft", "Allow cabin altitude to exceed 20,000 ft", "Depressurize completely for fuel savings"], "answer": 1, "explain": "Pressurization systems typically maintain cabin altitude at or below roughly 8,000 ft even at much higher cruise altitudes."},
+            {"q": "What component primarily regulates how much air escapes the cabin to control pressure?", "choices": ["The fuel selector valve", "The outflow valve", "The landing gear actuator", "The pitot tube"], "answer": 1, "explain": "The outflow valve(s) regulate the rate of air escaping the pressurized cabin, working with the inflow to set cabin pressure."},
+            {"q": "Cabin differential pressure is defined as:", "choices": ["Cabin pressure plus ambient pressure", "Cabin pressure minus ambient (outside) pressure", "Ambient pressure only", "Fuel tank pressure minus cabin pressure"], "answer": 1, "explain": "Differential pressure = cabin pressure - outside ambient pressure; it's a key structural limit for the fuselage."},
+            {"q": "Why is exceeding the maximum cabin differential pressure a concern?", "choices": ["It saves fuel", "It can overstress the fuselage structure", "It has no structural effect", "It only affects cabin temperature"], "answer": 1, "explain": "Excess differential pressure can overstress the pressure vessel (fuselage), risking structural damage or failure."},
+            {"q": "Safety/relief valves in a pressurization system are designed to:", "choices": ["Increase cabin altitude intentionally at all times", "Relieve excess positive or negative differential pressure", "Shut off all engine bleed air permanently", "Only function on the ground"], "answer": 1, "explain": "Safety valves protect the structure by relieving pressure if differential exceeds safe limits in either direction."},
+        ],
+    },
+    {
+        "id": "borescope_inspection", "title": "Turbine Engine Borescope Inspection", "track": "powerplant", "icon": "&#x1F50E;",
+        "sections": [
+            {"heading": "Purpose of Borescope Inspection",
+             "body": "Borescope inspection allows technicians to visually examine internal engine components (compressor blades, combustor liners, turbine blades/vanes) through small access ports without full engine teardown, catching damage like foreign object damage (FOD), cracking, erosion, and hot-section distress early."},
+            {"heading": "Borescope Equipment and Access",
+             "body": "Rigid and flexible fiberscopes/videoscopes are inserted through dedicated borescope ports in the engine case. Proper access requires removing plugs, and on some engines rotating the compressor/turbine (by hand or motoring) to bring each blade into view for a complete inspection."},
+            {"heading": "Common Findings and Damage Types",
+             "body": "Typical findings include nicks and dents from FOD, cracking at blade roots or leading edges, erosion from sand/dust ingestion, thermal distress (bluing, coating loss) in the hot section, and carbon buildup on fuel nozzles or combustor liners. Findings are documented against manufacturer serviceable limits."},
+            {"heading": "Recording and Disposition",
+             "body": "Borescope findings are photographed/recorded with reference to blade/stage location, then compared against the engine manual's serviceable limits to determine if the engine can continue in service, needs monitoring at reduced intervals, or requires removal for further inspection or repair."},
+        ],
+        "quiz": [
+            {"q": "What is the main advantage of borescope inspection over full teardown?", "choices": ["It is more expensive", "It allows internal inspection without full disassembly", "It replaces the need for any inspection", "It only works on piston engines"], "answer": 1, "explain": "Borescope inspection lets technicians view internal components through small ports, avoiding the cost and downtime of a full teardown."},
+            {"q": "To inspect every blade on a compressor or turbine stage, technicians often need to:", "choices": ["Remove the entire engine", "Rotate the compressor/turbine to bring each blade into view", "Only inspect the first blade", "Disable the fuel system permanently"], "answer": 1, "explain": "Rotating the rotor (by hand or motoring) brings each blade sequentially into the borescope's field of view for a complete inspection."},
+            {"q": "Thermal distress in the hot section may appear during borescope inspection as:", "choices": ["Increased shine and reflectivity", "Bluing or coating loss", "Extra paint markings", "Lower fuel pressure"], "answer": 1, "explain": "Thermal distress often shows as discoloration (bluing) or loss of protective thermal barrier coating on hot-section components."},
+            {"q": "Borescope findings are typically evaluated against:", "choices": ["The technician's personal judgment only", "Manufacturer serviceable limits in the engine manual", "The aircraft's paint scheme", "Cabin pressurization limits"], "answer": 1, "explain": "Findings are compared to the manufacturer's published serviceable limits to determine appropriate disposition."},
+            {"q": "Carbon buildup found on fuel nozzles or combustor liners during borescope inspection may indicate:", "choices": ["Normal, no-action-needed wear only", "A potential fuel/combustion issue worth further evaluation", "A problem exclusively with the landing gear", "A cabin pressurization fault"], "answer": 1, "explain": "Excessive carbon buildup can point to fuel nozzle spray pattern issues or combustion inefficiency needing further evaluation."},
+        ],
+    },
+    {
+        "id": "recip_ignition", "title": "Reciprocating Engine Ignition Systems", "track": "powerplant", "icon": "&#x26A1;",
+        "sections": [
+            {"heading": "Dual Magneto Ignition Systems",
+             "body": "Most reciprocating aircraft engines use two independent magneto-driven ignition systems firing two spark plugs per cylinder, providing redundancy (an engine can run, though roughly, on one magneto) and more complete/faster combustion for better performance and smoother operation."},
+            {"heading": "Magneto Operation",
+             "body": "A magneto is a self-contained generator that produces its own high-voltage spark energy without battery power, driven mechanically off the engine. Breaker points (or electronic triggering on modern units) time the spark relative to piston position, distributed to the correct cylinder via the distributor gear/rotor."},
+            {"heading": "Ignition Timing and the Impulse Coupling",
+             "body": "Ignition timing (spark advance before top dead center) is critical for engine performance and must be set per the maintenance manual. An impulse coupling on one magneto retards timing and boosts spark energy during starting, for a reliable, safe hand-crank or starter-assisted start at low RPM."},
+            {"heading": "Ignition System Inspection and Hazards",
+             "body": "Magnetos can produce a spark even with the engine switch off if the p-lead (ground/shorting lead) is disconnected or broken - always treat a propeller as if the ignition is live. Inspect spark plugs for proper gap and fouling, harness leads for cracking/carbon tracking, and magneto timing per the overhaul/maintenance manual schedule."},
+        ],
+        "quiz": [
+            {"q": "Why do most reciprocating aircraft engines use two independent magneto systems?", "choices": ["To reduce weight", "For redundancy and more complete combustion", "Because a single magneto is illegal", "To eliminate the need for spark plugs"], "answer": 1, "explain": "Dual magnetos provide redundancy (engine can run on one) and better combustion via two spark plugs per cylinder."},
+            {"q": "A magneto produces ignition spark energy by:", "choices": ["Drawing power from the aircraft battery only", "Generating its own high-voltage energy mechanically, independent of the battery", "Using solar cells", "Storing energy in the fuel"], "answer": 1, "explain": "A magneto is a self-contained generator producing its own spark energy, independent of the aircraft's battery/electrical system."},
+            {"q": "What is the purpose of an impulse coupling on a magneto?", "choices": ["To permanently advance timing at all RPM", "To retard timing and boost spark energy during starting", "To shut off the ignition automatically", "To cool the magneto housing"], "answer": 1, "explain": "The impulse coupling retards timing and provides a stronger spark at low starting RPM for a safe, reliable engine start."},
+            {"q": "Why must a propeller always be treated as if the ignition is live, even with the switch off?", "choices": ["Propellers are always statically charged", "A broken/disconnected p-lead can allow a magneto to still produce spark", "The battery is always connected to the prop", "This is only a myth with no basis"], "answer": 1, "explain": "If the p-lead (grounding/shorting lead) is open, a magneto can still fire even with the ignition switch off - a serious safety hazard."},
+            {"q": "Ignition timing on a reciprocating engine refers to:", "choices": ["The color of the spark plug", "The spark occurring at a specified point relative to piston position (advance before TDC)", "The fuel mixture setting only", "The oil change interval"], "answer": 1, "explain": "Ignition timing specifies how many degrees before top dead center the spark occurs, critical for proper combustion and performance."},
+        ],
+    },
+]
+
+EXT13_FLASHCARDS = [
+    {"q": "What is bleed air?", "a": "Compressed air tapped from a turbine engine's compressor stages, used for pneumatics, anti-icing, and cabin pressurization."},
+    {"q": "How do pneumatic deicing boots remove ice?", "a": "Cyclic inflation cracks and sheds ice buildup on leading edges; deflation restores a smooth airfoil."},
+    {"q": "What does a smaller AWG number mean?", "a": "A larger wire conductor with higher current-carrying capacity."},
+    {"q": "Where does wire chafing damage most commonly occur?", "a": "At clamps, structure pass-throughs, and moving surfaces."},
+    {"q": "Why avoid soldered splices in high-vibration areas?", "a": "Solder joints are relatively rigid and can crack from vibration fatigue."},
+    {"q": "What cabin altitude do pressurization systems typically maintain during cruise?", "a": "At or below about 8,000 ft, even at much higher actual flight altitudes."},
+    {"q": "What is cabin differential pressure?", "a": "Cabin pressure minus outside ambient pressure - a key structural limit for the fuselage."},
+    {"q": "What does the outflow valve do in a pressurization system?", "a": "Regulates the rate of air escaping the cabin to control cabin pressure."},
+    {"q": "What is the main advantage of borescope inspection?", "a": "It allows visual inspection of internal engine components without full teardown."},
+    {"q": "How do technicians inspect every blade on a compressor/turbine stage with a borescope?", "a": "By rotating the rotor (by hand or motoring) to bring each blade into view."},
+    {"q": "How does thermal distress often appear during a borescope inspection?", "a": "As bluing or loss of protective thermal barrier coating on hot-section parts."},
+    {"q": "Why do most reciprocating engines use dual magnetos?", "a": "For ignition redundancy and more complete/faster combustion."},
+    {"q": "What powers a magneto's spark energy?", "a": "The magneto generates its own high-voltage energy mechanically - it does not rely on the aircraft battery."},
+    {"q": "What does an impulse coupling do?", "a": "Retards ignition timing and boosts spark energy during starting for a safe, reliable start."},
+    {"q": "Why should a propeller always be treated as if ignition is live?", "a": "A broken or disconnected p-lead can allow a magneto to still fire even with the switch off."},
+    {"q": "What is ignition timing?", "a": "The specified point (degrees before top dead center) at which the spark occurs relative to piston position."},
+]
+
+EXT13_GLOSSARY = [
+    {"term": "Bleed Air", "def": "Compressed air tapped from a turbine engine's compressor stages, used for pneumatics, anti-icing, and cabin pressurization."},
+    {"term": "Pneumatic Deicing Boots", "def": "Inflatable rubber boots on leading edges that cyclically inflate/deflate to crack and shed ice buildup."},
+    {"term": "AWG (American Wire Gauge)", "def": "A standardized wire sizing system where smaller numbers indicate larger conductors with higher current capacity."},
+    {"term": "Ampacity", "def": "The safe current-carrying capacity of a wire, dependent on gauge, insulation, bundle size, and installation conditions."},
+    {"term": "Crimp Terminal", "def": "A wire connector attached by mechanically compressing (crimping) it onto the conductor with a specified tool and die."},
+    {"term": "Cabin Altitude", "def": "The equivalent atmospheric pressure altitude maintained inside a pressurized cabin, kept lower than the actual flight altitude."},
+    {"term": "Outflow Valve", "def": "A valve that regulates the rate of air escaping a pressurized cabin to control cabin pressure."},
+    {"term": "Cabin Differential Pressure", "def": "The difference between cabin pressure and outside ambient pressure; a critical fuselage structural limit."},
+    {"term": "Borescope", "def": "An optical/video inspection tool inserted through small access ports to visually examine internal engine components."},
+    {"term": "Foreign Object Damage (FOD)", "def": "Damage to engine components caused by ingestion or impact of foreign objects such as debris, ice, or tools."},
+    {"term": "Magneto", "def": "A self-contained, engine-driven generator that produces its own high-voltage spark energy for ignition, independent of the battery."},
+    {"term": "Impulse Coupling", "def": "A mechanism on a magneto that retards timing and boosts spark energy during engine starting."},
+    {"term": "P-Lead", "def": "The grounding/shorting lead on a magneto that, when connected, allows the ignition switch to disable the magneto; if broken, the magneto may still fire."},
+    {"term": "Ignition Timing", "def": "The specified point (in degrees before top dead center) at which the spark plug fires relative to piston position."},
+]

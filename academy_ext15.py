@@ -1,0 +1,144 @@
+"""Aviation Maintenance Academy - Wave 8 content expansion pack.
+5 new modules: nondestructive_electrical, aircraft_batteries, fuel_metering,
+turbine_starting, sheet_metal_repair_adv.
+Merged in academy_data.py.
+"""
+
+EXT15_MODULES = [
+    {
+        "id": "nondestructive_electrical", "title": "Electrical System Troubleshooting", "track": "general", "icon": "\u26a1",
+        "sections": [
+            {"heading": "Systematic Troubleshooting Approach",
+             "body": "Effective electrical troubleshooting follows a logical sequence: verify the complaint, review the wiring diagram, isolate the circuit into segments, and test at accessible points working from the easiest/most likely fault points inward. Guessing and randomly swapping components wastes time and can mask the real fault."},
+            {"heading": "Voltage, Continuity, and Resistance Checks",
+             "body": "A voltage check confirms power is present at a point with the circuit energized; a continuity check confirms an unbroken path with power off; a resistance check quantifies wire/connection resistance to find high-resistance faults (corroded connectors, loose crimps) that a simple continuity check might miss."},
+            {"heading": "Common Electrical Faults",
+             "body": "Common faults include open circuits (broken wire, blown fuse, failed switch), short circuits (chafed wire touching ground/another circuit), high-resistance connections (corrosion, loose terminals), and intermittent faults (vibration-sensitive connectors, marginal grounds) that only appear under certain conditions."},
+            {"heading": "Grounding and Bonding",
+             "body": "Proper aircraft grounding and bonding provide a low-resistance return path for current and dissipate static charge, and are critical for radio/avionics noise suppression and lightning protection. Loose or corroded ground straps are a frequent, easily overlooked source of erratic electrical faults."},
+        ],
+        "quiz": [
+            {"q": "What is the first step in a systematic electrical troubleshooting approach?", "choices": ["Randomly swap components", "Verify the complaint and review the wiring diagram", "Replace the battery", "Skip straight to replacing the suspected part"], "answer": 1, "explain": "Verifying the complaint and reviewing the wiring diagram establishes a clear starting point before isolating the fault."},
+            {"q": "What does a continuity check verify?", "choices": ["Voltage present with the circuit energized", "An unbroken path with power off", "Fuel flow rate", "Cabin altitude"], "answer": 1, "explain": "A continuity check confirms an unbroken electrical path, typically performed with the circuit de-energized."},
+            {"q": "A high-resistance connection (e.g., corroded terminal) might be missed by a simple continuity check because:", "choices": ["Continuity checks always detect resistance faults", "A weak continuity check may still show a path even with excessive resistance", "High resistance always causes an open circuit", "Continuity checks require the circuit to be energized"], "answer": 1, "explain": "A continuity tester may show a path even through a degraded high-resistance connection, so a resistance measurement is needed to properly quantify the fault."},
+            {"q": "An intermittent electrical fault is best described as one that:", "choices": ["Is always present at a constant severity", "Only appears under certain conditions (vibration, temperature, movement)", "Cannot ever be diagnosed", "Only occurs during engine start"], "answer": 1, "explain": "Intermittent faults appear inconsistently, often triggered by vibration, temperature changes, or physical movement of a marginal connection."},
+            {"q": "Why is proper aircraft grounding and bonding important?", "choices": ["It has no functional purpose", "It provides a low-resistance return path and helps with static/lightning protection and noise suppression", "It only affects paint appearance", "It replaces the need for circuit breakers"], "answer": 1, "explain": "Grounding/bonding provides a proper current return path, dissipates static, and supports lightning protection and avionics noise suppression."},
+        ],
+    },
+    {
+        "id": "aircraft_batteries", "title": "Aircraft Batteries", "track": "general", "icon": "\ud83d\udd0b",
+        "sections": [
+            {"heading": "Battery Types",
+             "body": "Lead-acid (flooded or sealed/AGM) and nickel-cadmium (NiCad) batteries are common on aircraft, with lithium-ion batteries increasingly used on newer designs. Each has different charging characteristics, thermal runaway risks, and maintenance requirements - never assume the same servicing procedure applies across chemistries."},
+            {"heading": "State of Charge and Capacity Testing",
+             "body": "Battery capacity (typically in amp-hours) degrades with age and cycling; a capacity check discharges the battery at a specified rate and measures how long it sustains a minimum voltage, compared against the rated capacity to determine serviceability (often requiring 80% of rated capacity minimum)."},
+            {"heading": "Thermal Runaway and NiCad Hazards",
+             "body": "NiCad batteries can experience thermal runaway - a self-sustaining, escalating overcharge/overheat condition - if a cell fails and disrupts normal charge control, requiring immediate battery removal/power isolation if detected (rising temperature, smoke, swelling). Lithium batteries carry similar or greater thermal runaway risk if damaged or overcharged."},
+            {"heading": "Battery Servicing and Safety",
+             "body": "Battery servicing requires appropriate PPE (acid-resistant gloves, eye protection for lead-acid electrolyte), proper ventilation (hydrogen gas is released during charging), and correct disposal per hazardous material regulations. Never mix electrolyte types or use incorrect charging equipment for the battery chemistry installed."},
+        ],
+        "quiz": [
+            {"q": "Why is it important not to assume the same servicing procedure applies across battery chemistries?", "choices": ["All batteries are serviced identically", "Different chemistries have different charging characteristics and hazards", "Battery chemistry has no effect on maintenance", "Only lead-acid batteries need any maintenance"], "answer": 1, "explain": "Lead-acid, NiCad, and lithium batteries each have distinct charging requirements and hazard profiles requiring chemistry-specific procedures."},
+            {"q": "A battery capacity check typically requires the battery to retain at least what percentage of rated capacity to remain serviceable (common general guideline)?", "choices": ["25%", "50%", "80%", "100% exactly, no tolerance"], "answer": 2, "explain": "A common general guideline is that a battery should retain at least about 80% of its rated capacity to remain serviceable, though exact limits vary by type/manufacturer."},
+            {"q": "Thermal runaway in a NiCad battery is best described as:", "choices": ["A normal charging state", "A self-sustaining, escalating overheat/overcharge condition", "A routine capacity test result", "A cosmetic defect only"], "answer": 1, "explain": "Thermal runaway is a dangerous, self-escalating overheat condition that can occur if a cell fails and disrupts normal charge control."},
+            {"q": "What gas is released during lead-acid battery charging, requiring proper ventilation?", "choices": ["Carbon monoxide", "Hydrogen", "Helium", "Nitrogen"], "answer": 1, "explain": "Lead-acid batteries release hydrogen gas during charging, which is flammable and requires adequate ventilation."},
+            {"q": "What PPE is important when servicing lead-acid batteries?", "choices": ["No PPE is needed", "Acid-resistant gloves and eye protection", "A hard hat only", "Steel-toed boots only"], "answer": 1, "explain": "Lead-acid electrolyte is corrosive; acid-resistant gloves and eye protection are important PPE for battery servicing."},
+        ],
+    },
+    {
+        "id": "fuel_metering", "title": "Fuel Metering & Injection Systems", "track": "powerplant", "icon": "\u26fd",
+        "sections": [
+            {"heading": "Carburetor vs. Fuel Injection",
+             "body": "Float-type carburetors mix fuel and air in a venturi before the intake manifold, and are prone to carburetor ice; fuel injection systems meter fuel directly to each cylinder (or near it), reducing icing risk and generally improving fuel distribution/mixture control across cylinders."},
+            {"heading": "Mixture Control",
+             "body": "Mixture controls adjust the fuel-to-air ratio to compensate for reduced air density at altitude - leaning the mixture as altitude increases maintains proper combustion efficiency and prevents an overly rich mixture from fouling spark plugs or wasting fuel."},
+            {"heading": "Fuel Injection System Components",
+             "body": "A typical reciprocating-engine fuel injection system includes an engine-driven fuel pump, a fuel control unit/servo that meters fuel based on airflow and throttle position, a fuel manifold (spider) distributing fuel to individual injector nozzles, and injector nozzles at each cylinder."},
+            {"heading": "Turbine Fuel Control Units",
+             "body": "Turbine engines use fuel control units (mechanical/hydromechanical or electronic - FADEC) that schedule fuel flow based on throttle lever position, engine speed, temperature, and altitude to maintain safe operating limits and prevent compressor stalls or overtemperature during acceleration."},
+        ],
+        "quiz": [
+            {"q": "What is a key disadvantage of float-type carburetors compared to fuel injection?", "choices": ["They are heavier", "They are more prone to carburetor ice", "They cannot be used on any aircraft", "They require no maintenance"], "answer": 1, "explain": "Float carburetors are prone to carburetor icing due to the venturi effect cooling the incoming air/fuel mixture."},
+            {"q": "Why is mixture leaned as altitude increases in a reciprocating engine?", "choices": ["To increase fuel consumption", "To compensate for reduced air density and maintain proper combustion efficiency", "Because engines always run better rich", "It has no effect on performance"], "answer": 1, "explain": "As altitude increases, air density drops; leaning the mixture keeps the fuel-air ratio appropriate for efficient combustion."},
+            {"q": "What distributes metered fuel to individual injector nozzles in a typical piston fuel injection system?", "choices": ["The magneto", "The fuel manifold (spider)", "The alternator", "The landing gear actuator"], "answer": 1, "explain": "The fuel manifold, sometimes called the spider, distributes metered fuel from the control unit to each cylinder's injector nozzle."},
+            {"q": "What does a turbine engine's fuel control unit primarily schedule fuel flow based on?", "choices": ["Cabin temperature only", "Throttle position, engine speed, temperature, and altitude", "Passenger count", "Landing gear position"], "answer": 1, "explain": "Turbine fuel control units schedule fuel flow based on multiple parameters including throttle position, N1/N2 speed, temperature, and altitude."},
+            {"q": "What is FADEC?", "choices": ["A type of carburetor", "Full Authority Digital Engine Control - an electronic fuel/engine control system", "A fuel additive", "A type of landing gear"], "answer": 1, "explain": "FADEC (Full Authority Digital Engine Control) is an electronic system that manages engine fuel scheduling and other parameters digitally."},
+        ],
+    },
+    {
+        "id": "turbine_starting", "title": "Turbine Engine Starting Systems", "track": "powerplant", "icon": "\ud83d\udd25",
+        "sections": [
+            {"heading": "Starting Sequence Overview",
+             "body": "A typical turbine start sequence involves the starter motor (pneumatic, electric, or hydraulic) rotating the engine to a minimum speed, then introducing ignition and fuel in the correct sequence, monitoring for light-off (rise in exhaust gas temperature and RPM), and releasing the starter once the engine is self-sustaining."},
+            {"heading": "Starter Types",
+             "body": "Pneumatic starters use compressed air (from an APU, ground cart, or cross-bleed from another running engine) driving an air turbine; electric starters use a DC motor (common on smaller turbines/APUs); hydraulic starters use hydraulic motors. Each has different torque, weight, and system integration characteristics."},
+            {"heading": "Hot Starts, Hung Starts, and Aborted Starts",
+             "body": "A hot start occurs when exhaust gas temperature exceeds limits during start (often from too much fuel too soon); a hung start occurs when the engine stabilizes at a low RPM below idle without accelerating further (often insufficient starter assist or fuel scheduling issue); both require an immediate abort per the manufacturer's procedure to prevent engine damage."},
+            {"heading": "Starter Duty Cycle Limits",
+             "body": "Starters (especially electric) have duty cycle limits (e.g., a maximum engagement time followed by a mandatory cooling period) to prevent overheating the starter motor. Maintenance manuals specify these limits, and exceeding them risks starter motor damage or failure on a subsequent start attempt."},
+        ],
+        "quiz": [
+            {"q": "What indicates engine 'light-off' during a turbine start?", "choices": ["A drop in oil pressure", "A rise in exhaust gas temperature and RPM", "Illumination of the landing lights", "A decrease in fuel flow to zero"], "answer": 1, "explain": "Light-off is indicated by a rise in EGT and RPM as combustion becomes established and self-sustaining."},
+            {"q": "What is a 'hot start'?", "choices": ["A start performed in warm weather", "A condition where exhaust gas temperature exceeds limits during start", "A start using an external power cart", "A normal, expected start condition"], "answer": 1, "explain": "A hot start is an abnormal condition where EGT exceeds safe limits, often from excess fuel introduced too soon, requiring an abort."},
+            {"q": "What characterizes a 'hung start'?", "choices": ["The engine accelerates too quickly to idle", "The engine stabilizes at a low RPM below idle without further acceleration", "The engine never rotates at all", "The engine exceeds maximum RPM limits"], "answer": 1, "explain": "A hung start occurs when the engine stalls out at a sub-idle RPM and fails to continue accelerating, often due to insufficient starter assist or fuel scheduling."},
+            {"q": "Why do electric starters have duty cycle limits?", "choices": ["To save fuel", "To prevent overheating the starter motor", "To comply with paint regulations", "To reduce cabin noise"], "answer": 1, "explain": "Electric starter motors can overheat with extended or repeated engagement, so duty cycle limits (engagement time + cooling period) protect the starter."},
+            {"q": "A pneumatic starter's compressed air source can come from:", "choices": ["Only the aircraft battery", "An APU, ground cart, or cross-bleed from another running engine", "The hydraulic reservoir", "The oxygen system"], "answer": 1, "explain": "Pneumatic starters can be supplied by an APU, external ground air cart, or cross-bleed air from an already-running engine."},
+        ],
+    },
+    {
+        "id": "sheet_metal_repair_adv", "title": "Advanced Sheet Metal Repair", "track": "airframe", "icon": "\ud83d\udd27",
+        "sections": [
+            {"heading": "Damage Evaluation and Repair Classification",
+             "body": "Sheet metal damage is classified as negligible (no repair needed within limits), repairable (patch, doubler, or splice per approved data), or requiring parts replacement (damage exceeds repairable limits). Structural repair manuals (SRMs) define allowable damage limits by location and damage type (dents, cracks, corrosion, punctures)."},
+            {"heading": "Repair Design Principles",
+             "body": "A proper sheet metal repair restores original strength, stiffness, and contour while avoiding stress concentrations. Doublers (external reinforcement patches) and flush patches (inset repairs) are sized and fastened per SRM guidance, with fastener edge distance, spacing, and pattern all critical to load transfer and fatigue life."},
+            {"heading": "Stop-Drilling and Crack Repair",
+             "body": "Stop-drilling a crack (drilling a small hole at the crack tip) can arrest crack propagation as a temporary or approved permanent measure in low-stress areas, removing the stress-concentrating sharp crack tip. This must be followed by an appropriate doubler or patch per SRM guidance for anything beyond negligible damage."},
+            {"heading": "Corrosion-Related Repairs",
+             "body": "Repairs following corrosion removal must account for material thinning - if corrosion removal reduces material below minimum gauge, a repair (doubler or replacement) is required even if no crack or puncture is present. Post-repair corrosion protection (primer, sealant) is essential to prevent recurrence at the repair site."},
+        ],
+        "quiz": [
+            {"q": "What document defines allowable sheet metal damage limits by location and damage type?", "choices": ["The pilot's operating handbook", "The structural repair manual (SRM)", "The weight and balance report", "The fuel planning chart"], "answer": 1, "explain": "The SRM defines allowable damage limits and approved repair methods by location and damage type."},
+            {"q": "What is the purpose of a doubler in a sheet metal repair?", "choices": ["To add decorative trim", "To provide external reinforcement restoring strength across the damaged area", "To reduce the aircraft's weight", "To seal fuel tanks only"], "answer": 1, "explain": "A doubler is a reinforcement patch that restores strength and stiffness across a repaired area."},
+            {"q": "What is the purpose of stop-drilling a crack?", "choices": ["To permanently seal the crack with paint", "To remove the stress-concentrating crack tip and arrest propagation", "To increase the crack length intentionally", "To weld the crack shut"], "answer": 1, "explain": "Stop-drilling removes the sharp crack tip that concentrates stress, helping arrest further crack propagation."},
+            {"q": "Why might a repair be required after corrosion removal even without a crack or puncture present?", "choices": ["Repairs are always required regardless of condition", "Material thinning from corrosion removal may reduce thickness below minimum gauge", "Corrosion removal always creates a puncture", "It is purely a cosmetic requirement"], "answer": 1, "explain": "If corrosion removal thins the material below the minimum allowable gauge, a repair is required to restore adequate strength."},
+            {"q": "What is important to apply after completing a repair following corrosion removal?", "choices": ["Nothing further is needed", "Corrosion protection such as primer and sealant", "Only decorative paint matching the fuselage color", "A layer of grease"], "answer": 1, "explain": "Post-repair corrosion protection (primer, sealant) is essential to prevent corrosion from recurring at the repair site."},
+        ],
+    },
+]
+
+EXT15_FLASHCARDS = [
+    {"q": "What is the first step in systematic electrical troubleshooting?", "a": "Verify the complaint and review the wiring diagram before isolating the fault."},
+    {"q": "What does a continuity check verify?", "a": "An unbroken electrical path, typically checked with the circuit de-energized."},
+    {"q": "Why can a continuity check miss a high-resistance fault?", "a": "It may still show a path even through a degraded, high-resistance connection - a resistance measurement is needed."},
+    {"q": "What is an intermittent electrical fault?", "a": "A fault that only appears under certain conditions like vibration, temperature change, or movement."},
+    {"q": "Why does proper aircraft grounding/bonding matter?", "a": "It provides a low-resistance return path and supports static/lightning protection and avionics noise suppression."},
+    {"q": "What gas is released during lead-acid battery charging?", "a": "Hydrogen gas, requiring adequate ventilation."},
+    {"q": "What is thermal runaway in a NiCad battery?", "a": "A self-sustaining, escalating overheat/overcharge condition, often from a failed cell."},
+    {"q": "What percentage of rated capacity is a common minimum guideline for battery serviceability?", "a": "About 80% of rated capacity (varies by type/manufacturer)."},
+    {"q": "What is a key disadvantage of float-type carburetors?", "a": "They are more prone to carburetor icing than fuel injection systems."},
+    {"q": "Why is mixture leaned as altitude increases?", "a": "To compensate for reduced air density and maintain proper combustion efficiency."},
+    {"q": "What does a turbine fuel control unit schedule fuel flow based on?", "a": "Throttle position, engine speed, temperature, and altitude."},
+    {"q": "What indicates turbine engine light-off during start?", "a": "A rise in exhaust gas temperature (EGT) and RPM."},
+    {"q": "What is a hung start?", "a": "A condition where the engine stabilizes at a low RPM below idle without further acceleration."},
+    {"q": "What document defines allowable sheet metal damage limits?", "a": "The structural repair manual (SRM)."},
+    {"q": "What is the purpose of stop-drilling a crack?", "a": "To remove the stress-concentrating crack tip and help arrest further propagation."},
+    {"q": "Why might a repair be required after corrosion removal even with no crack present?", "a": "Material thinning may reduce thickness below minimum gauge, requiring reinforcement or replacement."},
+]
+
+EXT15_GLOSSARY = [
+    {"term": "Continuity Check", "def": "An electrical test verifying an unbroken path exists in a de-energized circuit."},
+    {"term": "High-Resistance Fault", "def": "A degraded electrical connection (corrosion, loose crimp) that impedes current flow without fully opening the circuit."},
+    {"term": "Bonding (Electrical)", "def": "Electrically connecting aircraft structural components to provide a low-resistance path and dissipate static charge."},
+    {"term": "Thermal Runaway", "def": "A self-sustaining, escalating overheat/overcharge condition in a battery, potentially leading to fire or explosion."},
+    {"term": "Battery Capacity Check", "def": "A test discharging a battery at a specified rate to measure how long it sustains minimum voltage, compared to rated capacity."},
+    {"term": "Carburetor Ice", "def": "Ice formed in a carburetor venturi due to cooling from fuel vaporization and pressure drop, restricting airflow."},
+    {"term": "Mixture Control", "def": "A control that adjusts the fuel-to-air ratio, typically leaned at altitude to compensate for reduced air density."},
+    {"term": "Fuel Control Unit (FCU)", "def": "A component that schedules fuel flow to a turbine engine based on throttle position, speed, temperature, and altitude."},
+    {"term": "FADEC", "def": "Full Authority Digital Engine Control - an electronic system managing engine fuel scheduling and other parameters digitally."},
+    {"term": "Light-Off", "def": "The point during engine start when combustion becomes established, indicated by rising EGT and RPM."},
+    {"term": "Hot Start", "def": "An abnormal turbine start condition where exhaust gas temperature exceeds limits, often from excess fuel introduced too soon."},
+    {"term": "Hung Start", "def": "An abnormal turbine start condition where the engine stabilizes at a low RPM below idle without further acceleration."},
+    {"term": "Doubler", "def": "An external reinforcement patch used in sheet metal repair to restore strength and stiffness across a damaged area."},
+    {"term": "Stop-Drilling", "def": "Drilling a small hole at a crack tip to remove the stress concentration and arrest crack propagation."},
+]

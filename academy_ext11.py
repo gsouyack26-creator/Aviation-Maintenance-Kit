@@ -1,0 +1,122 @@
+"""Aviation Maintenance Academy - Wave 6 content pack.
+Adds 5 new modules balanced across tracks. Merged in academy_data.py.
+"""
+
+EXT11_MODULES = [
+  {
+    "id": "corrosion_control", "title": "Corrosion Identification & Control", "track": "general", "icon": "&#x1F6E1;",
+    "sections": [
+      {"heading": "Types of Corrosion", "body": "<b>Uniform surface corrosion</b> etches evenly across a surface; <b>pitting corrosion</b> creates small localized pits, often under coatings; <b>galvanic corrosion</b> occurs when two dissimilar metals contact in the presence of an electrolyte (e.g., moisture); <b>intergranular corrosion</b> attacks grain boundaries inside the metal, often invisible from the surface until advanced."},
+      {"heading": "Causes & Contributing Factors", "body": "Moisture, salt air, battery acid spills, and trapped dirt/debris all accelerate corrosion. Poor drainage, damaged paint/primer, and dissimilar-metal fastener combinations (without proper isolation) create ideal conditions. Aircraft operated near coastal or industrial areas face elevated corrosion risk and often need more frequent inspection."},
+      {"heading": "Detection & Treatment", "body": "Corrosion is found via visual inspection (sometimes with magnification), and confirmed/assessed via NDI methods for hidden or advanced cases. Treatment involves mechanical removal (sanding/blasting) down to sound metal, chemical conversion coating, and reapplication of primer/paint - the specific process and allowable removal limits are per the structural repair manual (SRM)."},
+      {"heading": "Prevention", "body": "Preventive measures include regular washing (especially after coastal/salt exposure), maintaining paint/primer integrity, using corrosion-inhibiting compounds (CIC) in fay surfaces and unpressurized bays, and ensuring drain holes remain clear. Dissimilar metals are isolated with sealant, primer, or non-conductive barriers to prevent galvanic action."}
+    ],
+    "quiz": [
+      {"q": "What is galvanic corrosion caused by?", "choices": ["UV light exposure","Two dissimilar metals in contact with an electrolyte","Extreme cold","Excess lubrication"], "answer": 1, "explain": "Galvanic corrosion results from contact between dissimilar metals in the presence of an electrolyte like moisture."},
+      {"q": "Which corrosion type attacks grain boundaries and can be invisible from the surface?", "choices": ["Uniform surface corrosion","Pitting corrosion","Intergranular corrosion","Filiform corrosion"], "answer": 2, "explain": "Intergranular corrosion progresses along internal grain boundaries and may not be visible until advanced."},
+      {"q": "What document specifies allowable corrosion removal limits?", "choices": ["The pilot's operating handbook","The structural repair manual (SRM)","The weight and balance report","The MEL"], "answer": 1, "explain": "The SRM defines approved corrosion removal procedures and allowable material loss limits."},
+      {"q": "How are dissimilar metals typically isolated to prevent galvanic corrosion?", "choices": ["They are never joined","Sealant, primer, or non-conductive barriers between them","Painting only the exterior","Using thicker fasteners"], "answer": 1, "explain": "Isolating dissimilar metals with sealant, primer, or barriers prevents the electrolytic path needed for galvanic corrosion."},
+      {"q": "Why do coastal-based aircraft often need more frequent corrosion inspection?", "choices": ["They fly higher","Salt air significantly accelerates corrosion","They are heavier","They use different fuel"], "answer": 1, "explain": "Salt-laden coastal air is a major corrosion accelerant, warranting more frequent inspection in those environments."}
+    ]
+  },
+  {
+    "id": "hydraulic_systems", "title": "Hydraulic Power Systems", "track": "airframe", "icon": "&#x1F4A7;",
+    "sections": [
+      {"heading": "Basic Hydraulic Principles", "body": "Hydraulic systems use <b>Pascal's Law</b> (pressure applied to a confined fluid transmits equally in all directions) to multiply force through pistons of different areas. Components include a reservoir, pump(s) (engine-driven, electric, or manual), pressure regulator/relief valve, actuators, and selector/control valves."},
+      {"heading": "System Components", "body": "An <b>accumulator</b> stores pressurized fluid (using a gas-charged piston or bladder) to dampen pressure spikes and provide backup pressure. <b>Filters</b> remove contamination that can damage seals and valves. <b>Check valves</b> allow flow in one direction only; <b>relief valves</b> protect against overpressure."},
+      {"heading": "Open vs. Closed Center Systems", "body": "In an <b>open-center</b> system, fluid circulates continuously through the system at low pressure when no actuator is being commanded. In a <b>closed-center</b> system, the pump maintains a static pressure with valves closed until an actuator is commanded, then flow is directed on demand - closed-center systems are common on larger transport aircraft with multiple simultaneous users."},
+      {"heading": "Maintenance & Troubleshooting", "body": "Common issues include internal/external leaks, contaminated fluid, air in the system (causing sponginess/erratic operation), and worn seals. Hydraulic fluid type (e.g., MIL-H-5606 mineral-based vs. Skydrol phosphate-ester) must never be mixed - incompatible fluids can destroy seals. Fluid level, cleanliness, and system pressure are checked per the AMM."}
+    ],
+    "quiz": [
+      {"q": "What principle allows hydraulic systems to multiply force?", "choices": ["Bernoulli's principle","Pascal's Law","Newton's third law","Boyle's Law"], "answer": 1, "explain": "Pascal's Law states that pressure applied to a confined fluid is transmitted equally, allowing force multiplication through different piston areas."},
+      {"q": "What is the purpose of a hydraulic accumulator?", "choices": ["To filter fluid","To store pressurized fluid, dampening spikes and providing backup pressure","To cool the fluid","To measure flow rate"], "answer": 1, "explain": "An accumulator stores pressurized fluid via a gas-charged piston/bladder for shock dampening and backup pressure."},
+      {"q": "In a closed-center hydraulic system, what happens when no actuator is commanded?", "choices": ["Fluid circulates continuously at low pressure","The pump maintains static pressure with valves closed until needed","The pump shuts off completely","Fluid drains to the reservoir"], "answer": 1, "explain": "Closed-center systems hold static pressure with valves closed, directing flow on demand when an actuator is commanded."},
+      {"q": "Why must hydraulic fluid types never be mixed?", "choices": ["It changes the fluid color","Incompatible fluids (e.g., mineral-based vs. phosphate-ester) can destroy seals","It has no real effect","It only affects fluid cost"], "answer": 1, "explain": "Mixing incompatible hydraulic fluid types can cause seal swelling/deterioration and system failure."},
+      {"q": "What symptom often indicates air trapped in a hydraulic system?", "choices": ["Perfectly smooth operation","Sponginess or erratic actuator operation","Increased fluid temperature only","Louder pump noise only"], "answer": 1, "explain": "Air in hydraulic fluid compresses, causing spongy or erratic actuator response instead of firm, consistent movement."}
+    ]
+  },
+  {
+    "id": "landing_gear_systems", "title": "Landing Gear Systems", "track": "airframe", "icon": "&#x1F6EC;",
+    "sections": [
+      {"heading": "Gear Configurations", "body": "<b>Tricycle</b> gear (nose + two main) is most common on modern aircraft, offering good ground handling and visibility. <b>Tailwheel (conventional)</b> gear places two main wheels forward of the CG and a small tailwheel aft - more prone to ground-looping but preferred for rough-field operation on some aircraft."},
+      {"heading": "Retraction Systems", "body": "Retractable gear uses hydraulic, electric, or pneumatic actuators to raise/lower gear, with mechanical uplocks/downlocks to secure position. Emergency extension systems (free-fall, backup hydraulic, or manual crank) allow gear extension if the primary system fails. Position indicators (lights, mechanical pins) confirm gear is safely down and locked before landing."},
+      {"heading": "Shock Struts (Oleo)", "body": "Most gear uses an <b>oleo-pneumatic strut</b> combining compressed air/nitrogen (springing action) with hydraulic fluid (damping) to absorb landing and taxi shock loads. Proper strut extension (checked against a chart, often via visible exposed chrome/piston length) indicates correct servicing - under- or over-serviced struts affect ground handling and shock absorption."},
+      {"heading": "Brakes & Tires", "body": "Most aircraft use <b>disc brakes</b> (single or multiple-disc) actuated hydraulically; some large aircraft have <b>anti-skid</b> systems that modulate brake pressure to prevent tire skidding, maximizing braking efficiency. Tire condition (tread wear, cuts, proper inflation) is critical - underinflated tires overheat and can fail; correct inflation is checked cold per the tire chart."}
+    ],
+    "quiz": [
+      {"q": "What is the main advantage of tricycle gear over tailwheel gear?", "choices": ["Lighter weight always","Better ground handling and visibility","Requires no brakes","Works only on grass runways"], "answer": 1, "explain": "Tricycle gear generally offers better ground handling, visibility, and stability compared to tailwheel configurations."},
+      {"q": "What does an oleo-pneumatic strut combine?", "choices": ["Two different metals","Compressed air/nitrogen with hydraulic fluid for shock absorption and damping","Electric motors and gears","Two separate tires"], "answer": 1, "explain": "Oleo struts use compressed gas for springing action and hydraulic fluid for damping to absorb shock loads."},
+      {"q": "What allows gear extension if the primary retraction system fails?", "choices": ["Nothing - gear stays retracted","Emergency extension system (free-fall, backup hydraulic, or manual crank)","The autopilot","Speed brakes"], "answer": 1, "explain": "Emergency extension systems provide a backup means to get the gear down if the primary system malfunctions."},
+      {"q": "What is the purpose of an anti-skid system?", "choices": ["Increase tire wear","Modulate brake pressure to prevent tire skidding and maximize braking efficiency","Increase touchdown speed","Reduce fuel consumption"], "answer": 1, "explain": "Anti-skid systems prevent wheel lockup/skidding by modulating brake pressure, improving stopping performance."},
+      {"q": "Why is it important to check tire inflation when cold?", "choices": ["Cold tires are always overinflated","Tire pressure rises with heat/use, so cold-check gives the true baseline reading","It doesn't matter when checked","Warm tires read lower than actual"], "answer": 1, "explain": "Tire pressure increases with heat, so checking cold ensures an accurate baseline reading against the tire chart."}
+    ]
+  },
+  {
+    "id": "turbine_theory", "title": "Gas Turbine Theory & Types", "track": "powerplant", "icon": "&#x1F32A;",
+    "sections": [
+      {"heading": "Brayton Cycle Basics", "body": "Gas turbines operate on the <b>Brayton cycle</b>: air is compressed, fuel is added and burned at roughly constant pressure, and the resulting hot expanding gas drives a turbine and/or produces thrust. This is continuous combustion (unlike a reciprocating engine's intermittent combustion), giving turbines smoother operation and higher power-to-weight ratios."},
+      {"heading": "Engine Types", "body": "<b>Turbojet</b>: all thrust from exhaust gas velocity. <b>Turbofan</b>: a large fan (bypassing much of the airflow around the core) provides most thrust with better fuel efficiency at subsonic speeds - the dominant type on modern airliners. <b>Turboprop</b>: a turbine drives a propeller through a reduction gearbox. <b>Turboshaft</b>: turbine power drives a shaft (helicopters, APUs, industrial use) rather than propulsive thrust directly."},
+      {"heading": "Compressor Types", "body": "<b>Centrifugal</b> compressors use an impeller to accelerate air outward, good for smaller/simpler engines with fewer stages needed. <b>Axial</b> compressors use a series of rotating (rotor) and stationary (stator) blade rows to progressively compress air along the engine's axis - most efficient for large, high-thrust engines and dominant in modern turbofans."},
+      {"heading": "Bypass Ratio & Efficiency", "body": "<b>Bypass ratio</b> compares the mass of air bypassing the core (through the fan) to the mass going through the core. High-bypass turbofans (common on airliners) prioritize fuel efficiency at high subsonic speed; low-bypass turbofans (military fighters) prioritize higher speed/thrust density at some efficiency cost."}
+    ],
+    "quiz": [
+      {"q": "What thermodynamic cycle do gas turbines operate on?", "choices": ["Otto cycle","Brayton cycle","Diesel cycle","Rankine cycle"], "answer": 1, "explain": "Gas turbines use the Brayton cycle: continuous compression, combustion, and expansion."},
+      {"q": "Which engine type provides most of its thrust via a large bypass fan?", "choices": ["Turbojet","Turbofan","Turboshaft","Ramjet"], "answer": 1, "explain": "Turbofans use a large fan to bypass most airflow around the core, producing most thrust with improved efficiency."},
+      {"q": "What is a key advantage of axial compressors over centrifugal for large engines?", "choices": ["Lower cost only","Higher efficiency and better suited to large, high-thrust engines","Simpler construction","No stator blades needed"], "answer": 1, "explain": "Axial compressors offer higher efficiency and scalability, making them dominant in large modern turbofans."},
+      {"q": "What does bypass ratio compare?", "choices": ["Fuel to oil ratio","Mass of air bypassing the core vs. mass going through the core","Compressor stages to turbine stages","Weight to thrust ratio"], "answer": 1, "explain": "Bypass ratio is the ratio of bypass airflow (through the fan, around the core) to core airflow."},
+      {"q": "Why do continuous-combustion turbine engines generally run smoother than reciprocating engines?", "choices": ["They use less fuel","Combustion is continuous rather than intermittent, avoiding the pulsed power strokes of a piston engine","They have fewer moving parts","They operate at lower RPM"], "answer": 1, "explain": "Turbines have smooth, continuous combustion, unlike the pulsed power strokes of reciprocating piston engines."}
+    ]
+  },
+  {
+    "id": "engine_lubrication", "title": "Engine Lubrication Systems", "track": "powerplant", "icon": "&#x1FAD9;",
+    "sections": [
+      {"heading": "Lubrication Purposes", "body": "Engine oil reduces friction/wear between moving parts, carries away heat, seals piston rings (in reciprocating engines), cleans by carrying away contaminants to the filter, and in some systems, helps dampen vibration/noise. Turbine engines also use oil for bearing lubrication and, in constant-speed props/hydraulic units, as an actuating fluid."},
+      {"heading": "Reciprocating Engine Lube Systems", "body": "Most reciprocating aircraft engines use a <b>wet-sump</b> system (oil stored in a pan/sump below the engine) or a <b>dry-sump</b> system (oil stored in a separate external tank, common on aerobatic and some high-performance engines to prevent oil starvation during inverted/high-G flight). Oil pumps, pressure relief valves, and filters/screens are common to both."},
+      {"heading": "Turbine Engine Lube Systems", "body": "Turbine engines typically use a <b>recirculating pressure-fed system</b> with a separate oil tank, pressure pump, scavenge pumps (to return oil from bearings back to the tank), oil coolers (air or fuel-cooled), and filters. Oil consumption and pressure/temperature trends are closely monitored - abnormal trends often indicate developing bearing or seal problems well before failure."},
+      {"heading": "Oil Analysis & Filtration", "body": "<b>Spectrometric oil analysis (SOA)</b> detects trace wearing metal particles in used oil, helping catch developing component wear before it becomes a failure. Filters have <b>bypass valves</b> that allow oil flow to continue (unfiltered) if the filter becomes clogged, preventing oil starvation - a clogged filter indicator/bypass warning signals the need for filter service."}
+    ],
+    "quiz": [
+      {"q": "What is a key purpose of engine oil besides reducing friction?", "choices": ["Increasing engine weight","Carrying away heat and contaminants","Reducing fuel octane requirements","Increasing compression ratio"], "answer": 1, "explain": "Beyond lubrication, oil carries away heat and contaminants (to the filter), among other functions."},
+      {"q": "Why do some aerobatic aircraft use a dry-sump oil system?", "choices": ["It's cheaper","To prevent oil starvation during inverted or high-G flight","It requires no oil pump","It eliminates the need for filters"], "answer": 1, "explain": "Dry-sump systems with external tanks help maintain oil supply during inverted/high-G maneuvers where a wet sump might starve the pump."},
+      {"q": "What is the purpose of a scavenge pump in a turbine lube system?", "choices": ["To add fuel to the oil","To return oil from bearings back to the oil tank","To measure oil temperature","To filter the fuel"], "answer": 1, "explain": "Scavenge pumps return oil from bearing sumps back to the main oil tank in a turbine engine's recirculating system."},
+      {"q": "What does spectrometric oil analysis (SOA) detect?", "choices": ["Fuel contamination only","Trace wearing metal particles indicating developing component wear","Tire pressure","Cabin altitude"], "answer": 1, "explain": "SOA detects trace metal particles in oil, helping identify developing wear issues before failure."},
+      {"q": "What is the purpose of a filter bypass valve?", "choices": ["To stop oil flow completely","To allow oil flow to continue (unfiltered) if the filter clogs, preventing oil starvation","To increase oil pressure permanently","To cool the oil"], "answer": 1, "explain": "A bypass valve prevents oil starvation by allowing flow around a clogged filter, though then unfiltered."}
+    ]
+  }
+]
+
+EXT11_FLASHCARDS = [
+  {"front": "Galvanic corrosion cause", "back": "Two dissimilar metals in contact with an electrolyte (e.g., moisture)."},
+  {"front": "Intergranular corrosion", "back": "Attacks grain boundaries inside the metal; often invisible from the surface until advanced."},
+  {"front": "Corrosion removal limits reference", "back": "The Structural Repair Manual (SRM)."},
+  {"front": "Pascal's Law", "back": "Pressure applied to a confined fluid transmits equally in all directions - basis of hydraulic force multiplication."},
+  {"front": "Hydraulic accumulator purpose", "back": "Stores pressurized fluid to dampen spikes and provide backup pressure."},
+  {"front": "Closed-center hydraulic system", "back": "Pump maintains static pressure with valves closed until an actuator is commanded."},
+  {"front": "Oleo-pneumatic strut", "back": "Combines compressed gas (springing) with hydraulic fluid (damping) to absorb landing shock."},
+  {"front": "Anti-skid system purpose", "back": "Modulates brake pressure to prevent tire skidding and maximize braking efficiency."},
+  {"front": "Brayton cycle", "back": "Continuous compression, combustion, and expansion cycle used by gas turbine engines."},
+  {"front": "Turbofan thrust source", "back": "Mostly from a large bypass fan; core provides the rest plus fan drive power."},
+  {"front": "Bypass ratio", "back": "Ratio of air bypassing the core (through the fan) to air going through the core."},
+  {"front": "Axial vs centrifugal compressor", "back": "Axial: rotor/stator stages along engine axis, efficient for large engines. Centrifugal: impeller, simpler, fewer stages."},
+  {"front": "Dry-sump oil system use case", "back": "Aerobatic/high-performance engines - prevents oil starvation during inverted/high-G flight."},
+  {"front": "Scavenge pump", "back": "Returns oil from turbine engine bearings back to the oil tank."},
+  {"front": "Spectrometric Oil Analysis (SOA)", "back": "Detects trace wearing metal particles in oil, revealing developing wear before failure."},
+  {"front": "Oil filter bypass valve", "back": "Allows unfiltered oil flow if the filter clogs, preventing oil starvation."},
+]
+
+EXT11_GLOSSARY = [
+  {"term": "Pitting Corrosion", "def": "Localized corrosion forming small pits, often occurring under coatings or in crevices."},
+  {"term": "Corrosion-Inhibiting Compound (CIC)", "def": "A protective compound applied to fay surfaces and unpressurized bays to prevent corrosion."},
+  {"term": "Pascal's Law", "def": "Pressure applied to a confined fluid is transmitted equally in all directions."},
+  {"term": "Open-Center Hydraulic System", "def": "A system where fluid circulates continuously at low pressure when no actuator is commanded."},
+  {"term": "Skydrol", "def": "A phosphate-ester based hydraulic fluid; must not be mixed with mineral-based fluids like MIL-H-5606."},
+  {"term": "Ground Loop", "def": "An uncontrolled swerve/rotation on the ground, more common with tailwheel gear configurations."},
+  {"term": "Uplock/Downlock", "def": "Mechanical locks that secure retractable landing gear in the up or down position."},
+  {"term": "Brayton Cycle", "def": "The thermodynamic cycle of continuous compression, combustion, and expansion used by gas turbines."},
+  {"term": "High-Bypass Turbofan", "def": "A turbofan with a high ratio of fan-bypassed air to core air, optimized for subsonic fuel efficiency."},
+  {"term": "Centrifugal Compressor", "def": "A compressor using an impeller to accelerate air outward; simpler, used in smaller turbine engines."},
+  {"term": "Wet-Sump Oil System", "def": "An oil system storing oil in a pan/sump directly below the engine."},
+  {"term": "Dry-Sump Oil System", "def": "An oil system using a separate external oil tank, common in aerobatic/high-performance engines."},
+  {"term": "Spectrometric Oil Analysis (SOA)", "def": "An oil test detecting trace wearing metal particles to reveal developing component wear."},
+  {"term": "Filter Bypass Valve", "def": "A valve that allows oil to bypass a clogged filter (unfiltered) to prevent oil starvation."},
+]

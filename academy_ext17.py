@@ -1,0 +1,143 @@
+"""Aviation Maintenance Academy - Wave 9 content expansion pack.
+5 new modules: hoisting_jacking, avionics_troubleshooting, oxygen_systems_adv,
+gas_turbine_performance, aircraft_finishes.
+Merged in academy_data.py.
+"""
+
+EXT17_MODULES = [
+    {
+        "id": "hoisting_jacking", "title": "Aircraft Jacking & Hoisting Safety", "track": "general", "icon": "\ud83c\udfd7",
+        "sections": [
+            {"heading": "Jack Point Identification",
+             "body": "Aircraft have designated jack points specified in the maintenance manual - using an incorrect location can damage structure or cause the aircraft to become unstable on the jacks. Jack pads/adapters matched to the specific jack point geometry are required, never improvised substitutes."},
+            {"heading": "Jacking Sequence and Stability",
+             "body": "Jacking typically follows a specified sequence (e.g., nose then main gear, or symmetric main gear points together) with weight and CG within limits, on a level, hard surface, and with the aircraft ideally in a wind-protected area since jacked aircraft are vulnerable to tip-over in gusts."},
+            {"heading": "Jack Capacity and Inspection",
+             "body": "Jacks must be rated for at least the load they will support with margin, inspected for hydraulic leaks, cracked welds, and proper operation before use. Never exceed a jack's rated capacity, and always have a means of safely lowering the aircraft if a jack fails partway through the task."},
+            {"heading": "Hoisting and Engine/Component Removal Safety",
+             "body": "Hoists and lifting slings used for engine or major component removal must be rated for the load with margin, inspected for wear (frayed cable, cracked hooks), and rigged per the manual's specified attachment points to avoid imbalance or component damage during the lift."},
+        ],
+        "quiz": [
+            {"q": "Why must jack points match those specified in the maintenance manual?", "choices": ["Any strong-looking structure point works fine", "Using an incorrect location can damage structure or destabilize the aircraft", "Jack points are purely cosmetic markings", "Manufacturers do not specify jack points"], "answer": 1, "explain": "Only manual-specified jack points are designed to safely support the aircraft's weight without structural damage or instability."},
+            {"q": "Why is a jacked aircraft particularly vulnerable in gusty wind conditions?", "choices": ["Wind has no effect once jacked", "The aircraft can tip over since it is no longer supported by its landing gear/tires", "Jacks automatically compensate for wind loads", "Wind only affects flight, not ground operations"], "answer": 1, "explain": "A jacked aircraft lacks the stability of its landing gear on the ground and can be more easily tipped by wind gusts."},
+            {"q": "What should be verified about a jack before use?", "choices": ["Only that it is painted the correct color", "That it is rated for the load with margin and free of leaks/damage", "That it matches the aircraft's paint scheme", "That it was manufactured within the last week"], "answer": 1, "explain": "Jacks must be inspected for proper rated capacity, hydraulic integrity, and structural condition before use."},
+            {"q": "What is a key consideration when rigging a hoist for engine removal?", "choices": ["Attaching at any convenient point", "Using the manual-specified attachment points to avoid imbalance or damage", "Using the thinnest available cable", "Skipping any capacity rating check"], "answer": 1, "explain": "Hoist rigging must use manual-specified attachment points and rated equipment to avoid an unbalanced or damaging lift."},
+            {"q": "What must be verified about weight and CG before jacking an aircraft?", "choices": ["They are irrelevant to jacking", "They must be within the limits specified for jacking", "Only weight matters, not CG", "Only CG matters, not weight"], "answer": 1, "explain": "Both weight and CG must be within specified jacking limits to maintain stability and avoid overloading jack points."},
+        ],
+    },
+    {
+        "id": "avionics_troubleshooting", "title": "Avionics System Troubleshooting", "track": "airframe", "icon": "\ud83d\udcf1",
+        "sections": [
+            {"heading": "Avionics Architecture Basics",
+             "body": "Modern avionics systems use data buses (e.g., ARINC 429, ARINC 664/AFDX, or CAN bus on smaller aircraft) to share information between line replaceable units (LRUs) such as navigation, communication, and display computers, rather than dedicated point-to-point wiring for every signal."},
+            {"heading": "LRU Fault Isolation",
+             "body": "Built-in test equipment (BITE) in most modern avionics LRUs can report fault codes, helping isolate whether a discrepancy is internal to the LRU, in the interconnecting wiring/bus, or in another interfacing LRU providing bad data. Cross-referencing BITE history with the maintenance manual's fault isolation procedures is the standard first troubleshooting step."},
+            {"heading": "Software and Database Considerations",
+             "body": "Avionics systems often rely on loadable software and periodically updated databases (navigation data, terrain, charts). A malfunction may stem from a software/database version mismatch or a corrupted/outdated load rather than a hardware fault - checking the installed versions against requirements is an important early troubleshooting step."},
+            {"heading": "Electromagnetic Interference (EMI) and Bonding",
+             "body": "Avionics can be susceptible to electromagnetic interference from poorly bonded/shielded wiring, nearby high-power equipment, or portable electronic devices. Proper cable shielding, grounding, and bonding practices per the manual reduce EMI-related nuisance faults or erroneous readings."},
+        ],
+        "quiz": [
+            {"q": "What do modern avionics data buses like ARINC 429 primarily do?", "choices": ["Provide mechanical support for LRUs", "Share information between line replaceable units (LRUs) digitally", "Supply hydraulic pressure", "Replace the need for any wiring"], "answer": 1, "explain": "Data buses like ARINC 429 carry digital information between avionics LRUs, replacing extensive point-to-point analog wiring."},
+            {"q": "What is BITE in the context of avionics troubleshooting?", "choices": ["A type of connector", "Built-in test equipment that reports fault codes from within an LRU", "A fuel additive", "A structural repair technique"], "answer": 1, "explain": "BITE (built-in test equipment) is self-test circuitry within an LRU that helps isolate faults by reporting diagnostic codes."},
+            {"q": "A software/database version mismatch in an avionics unit might cause:", "choices": ["No effect on system operation ever", "A malfunction that could be mistaken for a hardware fault", "Automatic self-correction with no technician input", "Only cosmetic display issues, never functional problems"], "answer": 1, "explain": "Version mismatches or corrupted software/database loads can cause malfunctions that mimic hardware faults, so checking versions is an important early step."},
+            {"q": "What can cause electromagnetic interference (EMI) affecting avionics?", "choices": ["Proper cable shielding and bonding", "Poorly bonded/shielded wiring or nearby high-power equipment", "Using only manufacturer-approved connectors", "Routine visual inspections"], "answer": 1, "explain": "Poor shielding/bonding or proximity to high-power equipment can introduce EMI that disrupts avionics signals."},
+            {"q": "When isolating an avionics fault, what should be cross-referenced with BITE history?", "choices": ["The aircraft's paint records", "The maintenance manual's fault isolation procedures", "The catering manifest", "The passenger seating chart"], "answer": 1, "explain": "BITE fault codes should be cross-referenced with the maintenance manual's specific fault isolation procedures for accurate diagnosis."},
+        ],
+    },
+    {
+        "id": "oxygen_systems_adv", "title": "Advanced Oxygen System Servicing", "track": "airframe", "icon": "\ud83e\udee7",
+        "sections": [
+            {"heading": "Oxygen System Types",
+             "body": "Aircraft oxygen systems may be gaseous (high-pressure cylinders), liquid (LOX, converted to gas via a converter), or chemical (oxygen generators producing gas via a chemical reaction, common for passenger emergency masks). Each has distinct servicing, storage, and hazard considerations."},
+            {"heading": "Oxygen Cleanliness and Fire Hazard",
+             "body": "Oxygen systems must be kept scrupulously free of oil, grease, and hydrocarbon contamination - these can ignite violently in an oxygen-enriched environment. Only oxygen-system-approved lubricants and cleaning agents are used, and tools/hands must be free of oil residue when servicing."},
+            {"heading": "Servicing Procedures and Precautions",
+             "body": "Oxygen cylinders are serviced slowly to avoid excessive heat buildup from rapid compression (adiabatic heating), never over-pressurized beyond rated limits, and always sourced from aviation-grade oxygen (not industrial/medical oxygen, which may have different moisture/purity specifications) unless specifically approved."},
+            {"heading": "Chemical Oxygen Generator Hazards",
+             "body": "Chemical oxygen generators produce oxygen via an exothermic chemical reaction and become very hot during activation - expended or activated generators must be handled and disposed of per hazardous material procedures, as an unexpended generator can still pose a fire/burn hazard if improperly triggered or damaged."},
+        ],
+        "quiz": [
+            {"q": "Why must oxygen systems be kept free of oil and grease contamination?", "choices": ["It has no effect on the system", "Oil/grease can ignite violently in an oxygen-enriched environment", "It only affects the smell of the oxygen", "Oil improves oxygen flow"], "answer": 1, "explain": "Hydrocarbon contamination in an oxygen-rich environment poses a serious fire/explosion hazard."},
+            {"q": "Why are oxygen cylinders serviced slowly rather than rapidly filled?", "choices": ["To save time", "To avoid excessive heat buildup from rapid compression (adiabatic heating)", "Rapid filling is always preferred and safer", "Slow filling has no technical reason"], "answer": 1, "explain": "Rapid compression during filling generates heat (adiabatic heating), which slow filling helps avoid for safety."},
+            {"q": "Why should industrial or medical oxygen generally not be used for aircraft systems unless specifically approved?", "choices": ["They are always identical to aviation oxygen", "They may have different moisture/purity specifications", "They are illegal to purchase", "Aircraft cannot use any oxygen except pure argon"], "answer": 1, "explain": "Industrial/medical oxygen may not meet aviation-grade moisture and purity specifications required for aircraft oxygen systems."},
+            {"q": "How do chemical oxygen generators (common for passenger masks) produce oxygen?", "choices": ["By compressing ambient air", "Via an exothermic chemical reaction", "By freezing liquid oxygen", "By electrolysis of water"], "answer": 1, "explain": "Chemical oxygen generators use an exothermic (heat-producing) chemical reaction to generate oxygen gas."},
+            {"q": "Why must expended or activated chemical oxygen generators be handled carefully?", "choices": ["They have no residual hazard", "They can become very hot and pose a fire/burn hazard", "They are lighter than unexpended units", "They must be recharged immediately"], "answer": 1, "explain": "Chemical oxygen generators get very hot during activation and retain hazard potential, requiring careful handling and disposal."},
+        ],
+    },
+    {
+        "id": "gas_turbine_performance", "title": "Gas Turbine Performance & Limits", "track": "powerplant", "icon": "\ud83d\udcc8",
+        "sections": [
+            {"heading": "Key Turbine Performance Parameters",
+             "body": "N1/N2 (or Np/Ng) represent rotational speeds of different spool sections; EGT (exhaust gas temperature) indicates combustion/turbine thermal condition; and torque or EPR (engine pressure ratio) can represent power output depending on engine type. Each has published normal and limit values in the engine manual."},
+            {"heading": "Thermal and Mechanical Limits",
+             "body": "Exceeding EGT limits accelerates hot-section wear and can cause immediate damage in severe cases; exceeding N1/N2 overspeed limits risks mechanical failure of rotating components. Both transient (brief exceedance) and steady-state limits are typically defined, with different allowable durations."},
+            {"heading": "Performance Trend Monitoring",
+             "body": "Engine trend monitoring programs track parameters like EGT margin, fuel flow, and vibration over time at comparable conditions (e.g., stabilized cruise) to detect gradual deterioration before it becomes a limit exceedance or in-flight event - a rising EGT trend at constant power is a classic early warning sign."},
+            {"heading": "Altitude and Temperature Effects on Performance",
+             "body": "Turbine engine thrust/power output decreases with increasing altitude (lower air density) and increasing outside air temperature (hotter air is less dense) - performance charts and flat-rating (engines rated to deliver a fixed thrust up to a temperature threshold) account for these effects in flight planning."},
+        ],
+        "quiz": [
+            {"q": "What does EGT indicate in a turbine engine?", "choices": ["Cabin pressure", "Exhaust gas temperature, indicating combustion/turbine thermal condition", "Landing gear position", "Fuel tank quantity"], "answer": 1, "explain": "EGT (exhaust gas temperature) reflects the thermal condition of combustion and the turbine section."},
+            {"q": "What is a key difference between transient and steady-state limit exceedances?", "choices": ["They are always treated identically with no distinction", "Transient (brief) exceedances often have different allowable durations than steady-state ones", "Steady-state limits do not exist for turbine engines", "Transient limits are always higher than steady-state limits with no restriction"], "answer": 1, "explain": "Engine manuals typically define different allowable durations for brief (transient) versus sustained (steady-state) limit exceedances."},
+            {"q": "What is a classic early warning sign detected by engine trend monitoring?", "choices": ["A sudden decrease in aircraft weight", "A rising EGT trend at constant power over time", "An increase in tire pressure", "A change in paint color"], "answer": 1, "explain": "A gradual rise in EGT at comparable power settings over time is a classic early indicator of engine deterioration."},
+            {"q": "Why does turbine engine thrust decrease with increasing altitude?", "choices": ["Air density decreases with altitude, reducing available thrust", "Engines run hotter at altitude, increasing thrust", "Altitude has no effect on turbine performance", "Fuel becomes denser at altitude"], "answer": 0, "explain": "Lower air density at higher altitude reduces the mass airflow through the engine, reducing available thrust."},
+            {"q": "What does 'flat-rating' an engine mean?", "choices": ["The engine has no rated limits", "The engine delivers a fixed thrust rating up to a specified temperature threshold", "The engine is physically flat in shape", "The engine cannot operate above sea level"], "answer": 1, "explain": "A flat-rated engine is designed to produce a constant thrust rating up to a specified outside air temperature, beyond which thrust falls off."},
+        ],
+    },
+    {
+        "id": "aircraft_finishes", "title": "Aircraft Finishes & Corrosion Protection", "track": "airframe", "icon": "\ud83c\udfa8",
+        "sections": [
+            {"heading": "Finish System Layers",
+             "body": "A typical aircraft finish system includes surface pretreatment (cleaning, etching, or conversion coating), a primer layer (often chromate or non-chromate corrosion-inhibiting primer) providing the main corrosion protection, and a topcoat providing UV/environmental protection and appearance."},
+            {"heading": "Surface Preparation",
+             "body": "Proper surface preparation (cleaning to remove oils/contaminants, light abrasion or chemical treatment for adhesion, and complete drying) is critical - finishes applied over contaminated or improperly prepared surfaces fail prematurely through poor adhesion, blistering, or accelerated corrosion underneath."},
+            {"heading": "Primer Selection and Corrosion Inhibition",
+             "body": "Corrosion-inhibiting primers contain compounds that passivate the metal surface and/or provide a sacrificial protective action; compatibility between primer, topcoat, and substrate material (aluminum, steel, composite) must be verified per the approved finish specification to avoid adhesion or galvanic issues."},
+            {"heading": "Finish Inspection and Touch-Up",
+             "body": "Inspect finishes for cracking, peeling, blistering, and chalking (UV degradation), which can allow moisture ingress and corrosion initiation. Touch-up repairs should feather-blend into existing finish and match the full layer system (primer plus topcoat), not just a cosmetic topcoat-only patch over bare or corroded metal."},
+        ],
+        "quiz": [
+            {"q": "What is the main purpose of the primer layer in an aircraft finish system?", "choices": ["Providing decorative color only", "Providing the main corrosion protection", "Improving aerodynamic drag", "Adding weight for balance"], "answer": 1, "explain": "The primer layer is the primary corrosion-inhibiting component of the finish system, beneath the cosmetic/protective topcoat."},
+            {"q": "Why does improper surface preparation cause premature finish failure?", "choices": ["It has no effect on finish durability", "Contaminants or poor adhesion prep cause blistering, peeling, or hidden corrosion", "Surface prep only affects color matching", "It only matters for composite structures"], "answer": 1, "explain": "Finishes applied over contaminated or poorly prepared surfaces adhere poorly and can trap moisture leading to corrosion underneath."},
+            {"q": "What must be verified when selecting a primer for a specific substrate?", "choices": ["Only the color needs to match", "Compatibility between primer, topcoat, and substrate material", "Primers are universally compatible with all materials", "Cost is the only consideration"], "answer": 1, "explain": "Primer/topcoat/substrate compatibility must be verified per approved specifications to avoid adhesion or galvanic corrosion issues."},
+            {"q": "What finish defect is caused by UV degradation?", "choices": ["Chalking", "Increased gloss with no other change", "Improved corrosion resistance", "Weight reduction"], "answer": 0, "explain": "Chalking (a powdery, dulled surface) is a common sign of UV degradation in aircraft finishes."},
+            {"q": "Why should touch-up repairs include the full primer-plus-topcoat layer system rather than just a cosmetic topcoat patch?", "choices": ["Cosmetic-only patches provide equal corrosion protection", "A topcoat-only patch over bare/corroded metal leaves inadequate corrosion protection", "Primer is unnecessary in touch-up work", "It has no bearing on long-term durability"], "answer": 1, "explain": "A topcoat-only touch-up without proper primer underneath does not restore the corrosion-inhibiting protection of the full finish system."},
+        ],
+    },
+]
+
+EXT17_FLASHCARDS = [
+    {"q": "Why must jack points match manual-specified locations?", "a": "Incorrect locations can damage structure or destabilize the aircraft on jacks."},
+    {"q": "Why is a jacked aircraft vulnerable in gusty winds?", "a": "It lacks the ground stability of its landing gear/tires and can tip over more easily."},
+    {"q": "What must be checked about a hoist rigging point for engine removal?", "a": "That it uses manual-specified attachment points with rated equipment to avoid imbalance or damage."},
+    {"q": "What do avionics data buses like ARINC 429 do?", "a": "Share digital information between line replaceable units (LRUs), replacing extensive point-to-point wiring."},
+    {"q": "What is BITE?", "a": "Built-in test equipment within an LRU that reports fault codes to help isolate malfunctions."},
+    {"q": "What can cause EMI affecting avionics?", "a": "Poorly bonded/shielded wiring or proximity to high-power equipment."},
+    {"q": "Why must oxygen systems stay free of oil and grease?", "a": "Hydrocarbon contamination can ignite violently in an oxygen-enriched environment."},
+    {"q": "Why are oxygen cylinders filled slowly?", "a": "To avoid excessive heat buildup from rapid compression (adiabatic heating)."},
+    {"q": "How do chemical oxygen generators produce oxygen?", "a": "Via an exothermic chemical reaction, becoming very hot during activation."},
+    {"q": "What does EGT indicate on a turbine engine?", "a": "Exhaust gas temperature, reflecting combustion/turbine thermal condition."},
+    {"q": "What is a classic early trend-monitoring warning sign of engine deterioration?", "a": "A rising EGT trend at constant power over time."},
+    {"q": "Why does turbine thrust decrease with altitude?", "a": "Lower air density at altitude reduces mass airflow through the engine."},
+    {"q": "What does flat-rating an engine mean?", "a": "The engine delivers a fixed thrust rating up to a specified temperature threshold."},
+    {"q": "What is the main purpose of an aircraft finish's primer layer?", "a": "Providing the main corrosion protection beneath the topcoat."},
+    {"q": "What finish defect results from UV degradation?", "a": "Chalking - a powdery, dulled surface appearance."},
+    {"q": "Why should touch-up repairs include primer, not just topcoat?", "a": "A topcoat-only patch leaves inadequate corrosion protection over bare/corroded metal."},
+]
+
+EXT17_GLOSSARY = [
+    {"term": "Jack Point", "def": "A manual-specified structural location designed to safely support an aircraft's weight when jacked."},
+    {"term": "Adiabatic Heating", "def": "Heat generated by rapid gas compression, a key hazard consideration when filling oxygen cylinders quickly."},
+    {"term": "Line Replaceable Unit (LRU)", "def": "A modular avionics or system component designed for quick removal/replacement at the line maintenance level."},
+    {"term": "BITE (Built-In Test Equipment)", "def": "Self-test circuitry within an avionics unit that reports diagnostic fault codes to aid troubleshooting."},
+    {"term": "ARINC 429", "def": "A common avionics data bus standard used to digitally share information between line replaceable units."},
+    {"term": "Chemical Oxygen Generator", "def": "A device producing oxygen via an exothermic chemical reaction, commonly used for passenger emergency oxygen masks."},
+    {"term": "EGT (Exhaust Gas Temperature)", "def": "A turbine engine parameter indicating the thermal condition of combustion and the turbine section."},
+    {"term": "Engine Trend Monitoring", "def": "A program tracking engine parameters over time at comparable conditions to detect gradual deterioration before it becomes a limit exceedance."},
+    {"term": "Flat-Rating", "def": "Designing an engine to deliver a fixed thrust rating up to a specified outside air temperature threshold."},
+    {"term": "EPR (Engine Pressure Ratio)", "def": "A turbine engine parameter representing the ratio of turbine discharge pressure to compressor inlet pressure, used as a power indicator on some engines."},
+    {"term": "Corrosion-Inhibiting Primer", "def": "A primer coating containing compounds that passivate a metal surface and/or provide sacrificial protection against corrosion."},
+    {"term": "Chalking", "def": "A powdery, dulled surface finish defect caused by UV degradation of the topcoat."},
+    {"term": "Conversion Coating", "def": "A chemical surface pretreatment that alters a metal's surface to improve corrosion resistance and finish adhesion."},
+]

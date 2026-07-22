@@ -1,0 +1,124 @@
+# -*- coding: utf-8 -*-
+"""Aviation Maintenance Academy - Content Expansion Pack 3 (Wave 2)
+Adds 5 new modules, flashcards, glossary terms. Merged in academy_data.py
+following the same pattern as academy_ext.py.
+"""
+
+EXT3_MODULES = [
+  {
+    "id": "advanced_electrical", "title": "Generators, Alternators & Distribution", "track": "general", "icon": "&#x1F50B;",
+    "sections": [
+      {"heading": "DC Generators", "body": "Engine-driven DC generators use a rotating armature and stationary field to produce current, regulated by a <b>voltage regulator</b>. Output rises with RPM; a <b>reverse-current relay</b> disconnects the generator if engine RPM (and output) drops too low, preventing the battery from motoring it."},
+      {"heading": "Alternators", "body": "Alternators produce AC internally, then <b>rectify</b> it to DC with diodes - lighter and more efficient at low RPM than DC generators. A rotating field (rotor) and stationary armature (stator) reverse the generator's arrangement, simplifying brush wear (only field current passes through brushes)."},
+      {"heading": "Voltage Regulation", "body": "Regulators hold output voltage constant despite RPM/load changes by varying field current. Overvoltage protection (crowbar/OV relay) disconnects the source if regulation fails, protecting avionics and the battery from damage."},
+      {"heading": "Distribution & Buses", "body": "Power flows from source (battery/generator) through buses to circuit breakers/fuses to loads. <b>Load shedding</b> and <b>essential/non-essential bus</b> splits preserve critical systems during a generator/alternator failure. Ground/bond straps complete return paths and control static/EMI."},
+      {"heading": "Protection Devices", "body": "<b>Circuit breakers</b> (resettable) vs <b>fuses</b> (one-time) protect wiring from overcurrent/short circuits. Breaker trip-free design prevents holding a breaker closed against a persistent fault. Never oversize protection to 'stop nuisance trips' - it defeats the protection."}
+    ],
+    "quiz": [
+      {"q": "A reverse-current relay's job is to:", "choices": ["Increase generator output", "Disconnect the generator when its output drops below battery voltage", "Charge the battery faster", "Regulate frequency"], "answer": 1, "explain": "It prevents the battery from driving (motoring) the generator when generator output falls below bus voltage."},
+      {"q": "Compared to a DC generator, an alternator is generally:", "choices": ["Heavier and less efficient", "Lighter and more efficient at low RPM", "Only usable at high altitude", "Incompatible with regulators"], "answer": 1, "explain": "Alternators are lighter, need less maintenance (only field current through brushes), and produce usable output at lower RPM."},
+      {"q": "Overvoltage protection primarily protects:", "choices": ["The propeller", "Avionics and the battery from damage", "The airframe structure", "Tire pressure"], "answer": 1, "explain": "An OV relay/crowbar disconnects the faulty source before excessive voltage damages sensitive avionics and the battery."},
+      {"q": "Load shedding during a generator failure is used to:", "choices": ["Save fuel", "Preserve power for essential-bus items only", "Increase total electrical load", "Reset breakers automatically"], "answer": 1, "explain": "Shedding non-essential loads keeps critical (essential-bus) equipment powered on limited remaining electrical capacity."},
+      {"q": "A trip-free circuit breaker design ensures:", "choices": ["It can be held closed against a persistent fault", "It will open on a fault even if the pilot holds/resets it", "It never opens", "It only works on the ground"], "answer": 1, "explain": "Trip-free breakers open on a genuine fault regardless of switch/handle position, protecting the wiring."}
+    ]
+  },
+  {
+    "id": "career_path", "title": "Career Path & A&P Certification", "track": "general", "icon": "&#x1F393;",
+    "sections": [
+      {"heading": "Certification Routes", "body": "Two main paths to sit the FAA A&P exams: <b>Part 147 school</b> (structured curriculum, typically 18-24 months) or <b>documented experience</b> (30 months hands-on work under supervision, or military training equivalency). Both require passing written, oral, and practical (O&P) tests."},
+      {"heading": "The Three Tests", "body": "<b>General</b> written/oral/practical is required for everyone. Then <b>Airframe</b> and/or <b>Powerplant</b> written/oral/practical, each covering that rating's subject areas. Test banks are published; use FAA's Airman Knowledge Testing supplements to study actual question style."},
+      {"heading": "Building Experience Before Certification", "body": "Cross-training technicians (industrial, automotive, military) can log verifiable maintenance experience toward the 30-month path. Keep a detailed personal log: dates, tasks, supervising mechanic's info - this becomes your eligibility documentation."},
+      {"heading": "Career Trajectory After A&P", "body": "Entry mechanic &rarr; line/shop mechanic &rarr; <b>Inspection Authorization (IA)</b> (extra experience + test, lets you approve annuals) &rarr; lead/crew chief &rarr; <b>DOM (Director of Maintenance)</b> or specialize (avionics, NDT Level II/III, engine overhaul shops). Many mechanics also cross into airline/MRO management or FAA inspector roles."}
+    ],
+    "quiz": [
+      {"q": "Which is NOT one of the two standard paths to A&P eligibility?", "choices": ["Part 147 school", "30 months documented experience", "Buying the certificate online", "Military training equivalency"], "answer": 2, "explain": "The A&P certificate cannot be purchased - it requires FAA-recognized training/experience plus passing written, oral, and practical tests."},
+      {"q": "The General test/rating is required for:", "choices": ["Only Airframe applicants", "Only Powerplant applicants", "Everyone pursuing A&P", "No one, it's optional"], "answer": 2, "explain": "General knowledge underpins both ratings and is required of every A&P applicant regardless of which rating(s) they pursue."},
+      {"q": "Inspection Authorization (IA) allows a mechanic to:", "choices": ["Fly the aircraft", "Approve annual inspections and major repairs for return to service", "Sell aircraft parts", "Waive AD compliance"], "answer": 1, "explain": "IA is an added authorization (beyond A&P) requiring more experience and a separate test, enabling annual inspection sign-off."},
+      {"q": "Documented experience toward A&P eligibility should record:", "choices": ["Nothing, memory is enough", "Dates, tasks performed, and supervising mechanic info", "Only total hours worked", "Only your own signature"], "answer": 1, "explain": "Verifiable logs (dates/tasks/supervisor) are what FAA reviews to confirm the required 30 months of experience."}
+    ]
+  },
+  {
+    "id": "composites_adv", "title": "Composite Structures & Repair", "track": "airframe", "icon": "&#x1F9EA;",
+    "sections": [
+      {"heading": "Laminate Construction", "body": "Composites layer <b>reinforcement fibers</b> (fiberglass, carbon, Kevlar/aramid) in a <b>resin matrix</b> (epoxy most common; some polyester/phenolic). Fiber orientation (0/45/90 deg plies) is chosen for the loads expected - matching the original layup schedule is critical for a proper repair."},
+      {"heading": "Sandwich (Honeycomb) Structures", "body": "Thin composite/metal <b>face sheets</b> bonded to a lightweight <b>honeycomb core</b> (aluminum or Nomex) give high stiffness-to-weight. Common in control surfaces, floor panels, radomes. Water intrusion into honeycomb (freeze/thaw) is a major damage mode - moisture-meter and tap-test checks target this."},
+      {"heading": "Damage Assessment", "body": "<b>Tap test</b> (coin/hammer) finds disbonds by sound. <b>Ultrasonic</b> inspection quantifies delaminations more precisely. Classify damage: cosmetic (no repair needed), damageable but repairable, or requiring engineering disposition/OEM approval for structural members."},
+      {"heading": "Repair Techniques", "body": "<b>Wet lay-up patch</b> - hand-laid plies over damage, cured at room temp or with heat blanket. <b>Pre-preg scarf/step-lap</b> repair for higher-strength structural repairs, often autoclave or vacuum-bag/oven cured. Always follow the SRM (Structural Repair Manual) ply schedule, cure temperature/time, and vacuum pressure exactly."}
+    ],
+    "quiz": [
+      {"q": "Matching the original ply orientation schedule in a composite repair matters because:", "choices": ["It only affects appearance", "It restores the load paths the structure was designed for", "It changes the resin color", "It has no structural effect"], "answer": 1, "explain": "Fiber orientation carries specific loads; a mismatched schedule can leave the repaired area weaker in the direction of actual flight loads."},
+      {"q": "A major damage mode unique to honeycomb sandwich panels is:", "choices": ["Rust", "Water intrusion with freeze/thaw core damage", "Magnetism loss", "Excess flexibility"], "answer": 1, "explain": "Trapped moisture in the honeycomb core can freeze, expand, and progressively destroy the core/face-sheet bond."},
+      {"q": "A dull, dead sound on a tap test over a composite panel most likely indicates:", "choices": ["Normal solid structure", "A disbond or delamination", "Correct cure", "Proper resin ratio"], "answer": 1, "explain": "A dull/dead tone versus the sharp consistent tone of solid laminate signals a subsurface disbond."},
+      {"q": "A scarf or step-lap repair is typically chosen for:", "choices": ["Purely cosmetic scratches", "Higher-strength structural composite repairs", "Fabric covering only", "Wood structures only"], "answer": 1, "explain": "Scarf/step-lap joints gradually taper the repair to restore strength efficiently in structural composite repairs, per SRM."},
+      {"q": "Before performing ANY composite structural repair you must:", "choices": ["Guess at cure time", "Follow the Structural Repair Manual's exact ply schedule, cure, and pressure specs", "Use any available resin", "Skip damage classification"], "answer": 1, "explain": "SRM data is approved data - deviating from ply schedule, cure profile, or vacuum/pressure specs can produce an unsafe repair."}
+    ]
+  },
+  {
+    "id": "ice_rain_protection", "title": "Ice & Rain Protection Systems", "track": "airframe", "icon": "&#x2744;",
+    "sections": [
+      {"heading": "Why Ice Matters", "body": "Even light frost/ice disrupts airflow over airfoils, increasing stall speed and drag while reducing lift - the <b>clean aircraft concept</b> demands no ice/frost/snow adhering before flight. Ice can also block pitot-static ports, engine inlets, and control surfaces/hinges."},
+      {"heading": "Anti-Ice vs De-Ice", "body": "<b>Anti-ice</b> systems run continuously to prevent ice from forming (e.g., heated leading edges, prop anti-ice). <b>De-ice</b> systems allow a small amount to build then remove it cyclically (e.g., pneumatic boots that inflate/crack ice off, or cycled electrothermal heating)."},
+      {"heading": "System Types", "body": "<b>Pneumatic boots</b> - rubber leading-edge boots inflated by engine bleed air/pump in a timed cycle. <b>Bleed-air thermal</b> - hot engine bleed air ducted to wing/engine inlet leading edges (turbine aircraft). <b>Electrothermal</b> - resistive heating elements (props, windshields, pitot heat, small unpressurized aircraft wings)."},
+      {"heading": "Rain & Windshield Protection", "body": "<b>Rain repellent</b> coatings, <b>windshield wipers</b>, and <b>heated windshields</b> (also anti-fog/anti-ice) maintain visibility. Pitot heat is critical - unheated in icing conditions gives false/frozen airspeed readings, a classic accident chain contributor."}
+    ],
+    "quiz": [
+      {"q": "The 'clean aircraft concept' requires:", "choices": ["A polished exterior", "No ice, frost, or snow adhering to critical surfaces before flight", "Recently washed windows", "New paint every year"], "answer": 1, "explain": "Even light frost disrupts airflow and increases stall speed - the aircraft must be free of adhering ice/frost/snow before flight."},
+      {"q": "The key difference between anti-ice and de-ice systems is:", "choices": ["Anti-ice prevents formation; de-ice removes ice after some accumulation", "They are the same thing", "De-ice only works on the ground", "Anti-ice is always pneumatic"], "answer": 0, "explain": "Anti-ice runs continuously to prevent ice formation; de-ice systems (like pneumatic boots) cycle to remove ice that has already formed."},
+      {"q": "Pneumatic deice boots work by:", "choices": ["Heating the leading edge", "Inflating in a timed cycle to crack/shed accumulated ice", "Spraying anti-freeze", "Vibrating at ultrasonic frequency"], "answer": 1, "explain": "Boots inflate with air pressure in a timed sequence, breaking the bond between ice and the boot surface so airflow removes it."},
+      {"q": "An unheated pitot tube in icing conditions can cause:", "choices": ["No effect on instruments", "False or frozen airspeed indications", "Increased fuel burn only", "Automatic autopilot disconnect"], "answer": 1, "explain": "A blocked/frozen pitot tube gives erroneous or frozen airspeed readings - a well-documented contributor to loss-of-control accidents."},
+      {"q": "Bleed-air thermal anti-ice systems are most associated with:", "choices": ["Small piston singles only", "Turbine-powered aircraft using engine bleed air", "Gliders", "Battery-only systems"], "answer": 1, "explain": "Bleed-air anti-ice taps hot compressor air from turbine engines to heat wing/inlet leading edges - not available on non-turbine aircraft."}
+    ]
+  },
+  {
+    "id": "engine_overhaul", "title": "Engine Overhaul & TBO", "track": "powerplant", "icon": "&#x2699;",
+    "sections": [
+      {"heading": "TBO & Overhaul Basics", "body": "<b>TBO (Time Between Overhaul)</b> is a manufacturer recommendation (hours or calendar time), not usually an FAA mandate for Part 91 piston aircraft - though it IS mandatory under some operating rules (e.g., Part 135) or if specified by an AD. Overhaul disassembles, inspects/measures every part against service limits, replaces life-limited/worn parts, and reassembles to like-new tolerances."},
+      {"heading": "Overhaul vs Rebuilt vs Repaired", "body": "<b>Overhauled</b> - inspected/reworked to service limits, may retain some original parts. <b>Rebuilt (zero-timed)</b> - only the manufacturer or their agent can 'zero-time' a logbook, using new/service-limit parts to essentially factory-new tolerances. <b>Repaired</b> - fixed a specific defect, not a full overhaul."},
+      {"heading": "Inspection During Teardown", "body": "Measure cylinders (bore wear/taper/out-of-round), check crankshaft runout/journals, inspect bearings/camshaft/lifters for spalling, magnetic-particle inspect steel parts, dye-penetrant aluminum parts, check AD/service bulletin compliance on every component (e.g., crankshaft AD inspections)."},
+      {"heading": "Life-Limited & Time-Continued Parts", "body": "Some parts (certain crankshafts, turbine disks, life-limited bolts) have a hard replacement time regardless of condition. Others can be <b>time-continued</b> - reused if they pass inspection, extending their service without a fixed cap. Proper records must trace part total time/cycles across overhauls."}
+    ],
+    "quiz": [
+      {"q": "For a typical Part 91 piston aircraft, TBO is generally:", "choices": ["An absolute FAA-mandated limit", "A manufacturer recommendation, not automatically mandatory", "Only for turbine engines", "Irrelevant to maintenance"], "answer": 1, "explain": "TBO is a manufacturer recommendation; Part 91 operators are not automatically required to overhaul at TBO unless an AD or their specific operating rules require it."},
+      {"q": "Only the manufacturer (or their agent) may legally call an engine:", "choices": ["Overhauled", "Rebuilt (zero-timed)", "Repaired", "Inspected"], "answer": 1, "explain": "The term 'rebuilt/zero-timed' has a specific regulatory meaning reserved for the manufacturer or their approved agent using new/service-limit parts."},
+      {"q": "A life-limited part must be:", "choices": ["Reused indefinitely if it looks fine", "Replaced at its specified limit regardless of condition", "Repaired instead of replaced", "Ignored during overhaul"], "answer": 1, "explain": "Life-limited parts have a hard mandatory replacement time/cycle limit - condition doesn't extend it."},
+      {"q": "During teardown, cylinders are measured mainly to check:", "choices": ["Paint condition", "Bore wear, taper, and out-of-round against service limits", "Color of the exhaust", "Fuel type compatibility"], "answer": 1, "explain": "Cylinder bore dimensions are compared against manufacturer service limits to decide reuse, honing, or replacement."},
+      {"q": "Time-continued parts differ from life-limited parts because they:", "choices": ["Can be reused if they pass inspection, without a fixed hard cap", "Must always be replaced", "Are never inspected", "Only apply to props"], "answer": 0, "explain": "Time-continued parts stay in service as long as inspection shows they remain serviceable, unlike life-limited parts with a fixed cutoff."}
+    ]
+  }
+]
+
+EXT3_FLASHCARDS = [
+  {"front":"Reverse-Current Relay","back":"Disconnects generator when output drops below bus voltage, preventing battery from motoring it"},
+  {"front":"Alternator vs Generator","back":"Alternator produces AC internally then rectifies to DC - lighter, efficient at low RPM"},
+  {"front":"Essential Bus","back":"Electrical bus preserving power to critical equipment during a source failure/load shedding"},
+  {"front":"Trip-Free Breaker","back":"Opens on a genuine fault even if held/reset - can't be defeated by holding it closed"},
+  {"front":"Part 147 School","back":"Structured A&P training program path, ~18-24 months, alternative to 30-month experience path"},
+  {"front":"Inspection Authorization (IA)","back":"Added authorization beyond A&P letting a mechanic approve annual inspections/major repairs"},
+  {"front":"Ply Orientation","back":"Fiber direction (0/45/90) in a composite laminate - matching original schedule restores load paths"},
+  {"front":"Honeycomb Water Intrusion","back":"Moisture trapped in honeycomb core that freeze/thaw cycles can destroy - major sandwich-panel damage mode"},
+  {"front":"Scarf/Step-Lap Repair","back":"Tapered composite repair joint used for higher-strength structural repairs per SRM"},
+  {"front":"Clean Aircraft Concept","back":"No ice/frost/snow may adhere to critical surfaces before flight"},
+  {"front":"Anti-Ice vs De-Ice","back":"Anti-ice prevents ice formation continuously; de-ice removes ice after some accumulation, cyclically"},
+  {"front":"Pneumatic Deice Boots","back":"Inflate in a timed cycle to crack and shed accumulated leading-edge ice"},
+  {"front":"TBO","back":"Time Between Overhaul - manufacturer recommendation, not automatically an FAA mandate under Part 91"},
+  {"front":"Rebuilt / Zero-Timed","back":"Term reserved for manufacturer/agent overhaul resetting logbook time to zero with new/service-limit parts"},
+  {"front":"Life-Limited Part","back":"Must be replaced at a specified time/cycle limit regardless of condition"},
+  {"front":"Time-Continued Part","back":"Stays in service indefinitely if inspection shows it remains serviceable - no fixed cap"}
+]
+
+EXT3_GLOSSARY = [
+  {"term":"Anti-Ice System","def":"Runs continuously to prevent ice formation on critical surfaces"},
+  {"term":"Bus (electrical)","def":"Common electrical distribution point feeding multiple circuits"},
+  {"term":"De-Ice System","def":"Cyclically removes ice after limited accumulation"},
+  {"term":"Essential Bus","def":"Circuit bus preserving power to critical equipment during a failure"},
+  {"term":"IA (Inspection Authorization)","def":"Added mechanic authorization to approve annuals/major repairs"},
+  {"term":"Life-Limited Part","def":"Component with a mandatory hard replacement time/cycle limit"},
+  {"term":"Load Shedding","def":"Disconnecting non-essential loads to preserve power for critical systems"},
+  {"term":"Pitot Heat","def":"Electric heating element preventing pitot tube ice blockage"},
+  {"term":"Rectifier","def":"Converts AC to DC, used in alternators"},
+  {"term":"Sandwich Structure","def":"Face sheets bonded to a lightweight core (honeycomb) for stiffness-to-weight"},
+  {"term":"Scarf Repair","def":"Tapered composite repair joint restoring structural strength"},
+  {"term":"Time-Continued Part","def":"Part reused indefinitely if inspection confirms it's still serviceable"},
+  {"term":"Voltage Regulator","def":"Holds generator/alternator output voltage constant despite RPM/load changes"},
+  {"term":"Zero-Timed","def":"Logbook reset to zero hours - only valid when done by mfr/agent per rebuild rules"}
+]
