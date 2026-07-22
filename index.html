@@ -10,11 +10,18 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;display:flex;flex-direction:column}
 .container{max-width:900px;margin:0 auto;padding:1.5rem;width:100%}
-header{background:var(--bg2);padding:1rem 1.5rem;border-bottom:2px solid var(--accent);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+header{background:var(--bg2);padding:1rem 1.5rem;border-bottom:2px solid var(--accent);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;position:relative}
 header h1{font-size:1.4rem;flex:1}
 .nav-btn{background:var(--bg3);border:none;color:var(--txt);padding:0.4rem 0.8rem;border-radius:6px;cursor:pointer;font-size:0.85rem}
 .nav-btn:hover,.nav-btn.active{background:var(--accent);color:#fff}
 .nav-btn:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
+.nav-more{display:contents}
+#nav-more-toggle{display:none}
+@media(max-width:900px){
+#nav-more-toggle{display:inline-block}
+.nav-more{display:none;position:absolute;top:100%;right:1rem;background:var(--bg2);border:1px solid var(--accent);border-radius:8px;padding:0.5rem;flex-direction:column;gap:0.3rem;z-index:500;box-shadow:0 8px 20px rgba(0,0,0,.4);max-height:70vh;overflow-y:auto}
+.nav-more.open{display:flex}
+}
 .card{background:var(--bg2);border-radius:var(--rad);padding:1.5rem;margin-bottom:1rem;border:1px solid var(--bg3)}
 .card h2{margin-bottom:0.8rem;color:var(--accent2)}
 .card h3{margin:1rem 0 0.5rem;color:var(--warn)}
@@ -68,10 +75,13 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 <h1>&#x2708;&#xFE0F; Aviation Maintenance Academy</h1>
 <nav role="navigation" aria-label="Main navigation">
 <button class="nav-btn active" onclick="show('v-dash');renderDash()">Dashboard</button>
-<button class="nav-btn" onclick="renderSims()">Sims</button>
-<button class="nav-btn" onclick="renderReference()">Reference</button>
 <button class="nav-btn" onclick="renderSearch()" aria-label="Search">&#x1F50D;</button>
 <button class="nav-btn" onclick="toggleTheme()" aria-label="Toggle dark/light theme">&#x1F317;</button>
+<button class="nav-btn" onclick="renderProfile()" id="nav-profile" aria-label="My profile">&#x1F464;</button>
+<button class="nav-btn" id="nav-more-toggle" onclick="toggleNavMore()" aria-haspopup="true" aria-expanded="false" aria-controls="nav-more" aria-label="More navigation options">&#x2630; More</button>
+<div class="nav-more" id="nav-more">
+<button class="nav-btn" onclick="renderSims()">Sims</button>
+<button class="nav-btn" onclick="renderReference()">Reference</button>
 <button class="nav-btn" onclick="renderFlash()">Flashcards</button>
 <button class="nav-btn" onclick="renderGloss()">Glossary</button>
 <button class="nav-btn" onclick="renderAch()">Achievements</button>
@@ -82,9 +92,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 <button class="nav-btn" onclick="renderReview()">&#x1F3AF; Review</button>
 <button class="nav-btn" onclick="renderCert()">Certificate</button>
 <button class="nav-btn" id="nav-roster" style="display:none" onclick="renderRoster()" aria-label="Roster">&#x1F465; Roster</button>
-<button class="nav-btn" onclick="renderProfile()" id="nav-profile" aria-label="My profile">&#x1F464;</button>
 <button class="nav-btn" onclick="cmdOpen()" title="Command palette (Ctrl+K)" aria-label="Open command palette">&#x2318;K</button>
 <button class="nav-btn" onclick="resetProgress()" title="Reset" aria-label="Reset progress">&#x1F5D1;</button>
+</div>
 </nav>
 </header>
 <main class="container" id="main-content">
@@ -1303,6 +1313,8 @@ function renderMastery(){
   show('v-mastery');
 }
 function toggleTheme(){const b=document.body;b.dataset.theme=b.dataset.theme==='light'?'dark':'light';localStorage.setItem('avia_theme',b.dataset.theme)}
+function toggleNavMore(){const m=document.getElementById('nav-more');const t=document.getElementById('nav-more-toggle');if(!m||!t)return;const open=m.classList.toggle('open');t.setAttribute('aria-expanded',open?'true':'false')}
+document.addEventListener('click',function(e){const m=document.getElementById('nav-more');const t=document.getElementById('nav-more-toggle');if(!m||!t||!m.classList.contains('open'))return;if(m.contains(e.target)||t.contains(e.target))return;m.classList.remove('open');t.setAttribute('aria-expanded','false')})
 function resetProgress(){if(confirm('Reset YOUR progress? (account stays)')){localStorage.removeItem(acctKey());load();renderDash();show('v-dash')}}
 function flashKeyHandler(e){
   const v=document.getElementById('v-flash');
