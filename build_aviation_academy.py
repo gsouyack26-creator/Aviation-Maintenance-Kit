@@ -21,6 +21,12 @@ from academy_ext20 import EXT20_SIMS, EXT20_REFERENCE
 from academy_ext22 import EXT22_SIMS, EXT22_REFERENCE
 from academy_ext23 import EXT23_REFERENCE, EXT23_ORAL, EXT23_PRACTICAL
 
+# Safety net: guarantee every module has a non-empty icon (prevents literal
+# 'undefined' from rendering in the Modules list if a future module dict omits it)
+for _m in MODULES:
+    if not _m.get('icon'):
+        _m['icon'] = '&#x2708;'
+
 # Merge content expansion pack 2
 for _m in MODULES:
     _m['quiz'] = _m['quiz'] + EXT2_QUIZ.get(_m['id'], [])

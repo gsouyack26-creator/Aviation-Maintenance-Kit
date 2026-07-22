@@ -10,6 +10,7 @@ EXT21_MODULES = [
         "id": "turbocharging_systems",
         "title": "Turbocharging & Turbo-Normalizing Systems",
         "track": "powerplant",
+        "icon": "&#x1F300;",
         "sections": [
             {
                 "heading": "Turbocharger Operating Principle",
@@ -85,6 +86,7 @@ EXT21_MODULES = [
         "id": "fadec_engine_controls",
         "title": "FADEC & Electronic Engine Controls",
         "track": "powerplant",
+        "icon": "&#x1F4BB;",
         "sections": [
             {
                 "heading": "FADEC Fundamentals",
@@ -160,6 +162,7 @@ EXT21_MODULES = [
         "id": "emergency_equipment_systems",
         "title": "Emergency Equipment & Evacuation Systems",
         "track": "airframe",
+        "icon": "&#x1F6A8;",
         "sections": [
             {
                 "heading": "Fire Extinguishing Equipment",
@@ -235,6 +238,7 @@ EXT21_MODULES = [
         "id": "ground_support_equipment",
         "title": "Ground Support Equipment (GSE) Operations",
         "track": "general",
+        "icon": "&#x1F69A;",
         "sections": [
             {
                 "heading": "Ground Power Units (GPUs)",
@@ -310,6 +314,7 @@ EXT21_MODULES = [
         "id": "fuel_quantity_indicating",
         "title": "Fuel Quantity & Indicating Systems",
         "track": "airframe",
+        "icon": "&#x26FD;",
         "sections": [
             {
                 "heading": "Capacitance-Type Fuel Quantity Systems",

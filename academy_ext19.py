@@ -4,6 +4,7 @@ EXT19_MODULES = [
         "id": "aircraft_welding_gas",
         "title": "Gas & Arc Welding for Airframe Repair",
         "track": "airframe",
+        "icon": "&#x1F525;",
         "sections": [
             {
                 "heading": "Oxy-Acetylene Welding Fundamentals",
@@ -79,6 +80,7 @@ EXT19_MODULES = [
         "id": "aircraft_electrical_bonding",
         "title": "Electrical Bonding & Static Discharge Systems",
         "track": "airframe",
+        "icon": "&#x26A1;",
         "sections": [
             {
                 "heading": "Purpose of Bonding",
@@ -154,6 +156,7 @@ EXT19_MODULES = [
         "id": "aircraft_scheduled_inspections",
         "title": "Scheduled Inspection Programs & Airworthiness Directives",
         "track": "general",
+        "icon": "&#x1F4CB;",
         "sections": [
             {
                 "heading": "Inspection Program Types",
@@ -229,6 +232,7 @@ EXT19_MODULES = [
         "id": "aircraft_fabric_covering",
         "title": "Fabric Covering & Doped Finishes",
         "track": "airframe",
+        "icon": "&#x1F9F5;",
         "sections": [
             {
                 "heading": "Fabric Materials and Certification",
@@ -304,6 +308,7 @@ EXT19_MODULES = [
         "id": "engine_condition_monitoring",
         "title": "Engine Condition Monitoring & Trend Analysis",
         "track": "powerplant",
+        "icon": "&#x1F4C8;",
         "sections": [
             {
                 "heading": "Purpose of Trend Monitoring",
