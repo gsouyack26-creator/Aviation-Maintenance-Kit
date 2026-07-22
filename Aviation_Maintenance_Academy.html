@@ -60,6 +60,7 @@ input[type=text],input[type=search]{background:var(--bg);border:1px solid var(--
 <body data-theme="dark">
 <div id="gate"></div>
 <div id="lmodal-host"></div>
+<div id="toast-stack" style="position:fixed;top:1rem;right:1rem;z-index:9999;display:flex;flex-direction:column;gap:0.5rem;max-width:min(90vw,320px)" aria-live="polite"></div>
 <a href="#main-content" class="sr-only-focusable">Skip to main content</a>
 <header>
 <h1>&#x2708;&#xFE0F; Aviation Maintenance Academy</h1>
@@ -134,7 +135,7 @@ function logScoreHistory(label,pct){
   persist();
 }
 function checkAch(id){if(!S.achievements.includes(id)){S.achievements.push(id);if(!S.achDates)S.achDates={};S.achDates[id]=new Date().toISOString();persist();toast(ACHIEVEMENTS.find(a=>a.id===id))}}
-function toast(ach){if(!ach)return;const d=document.createElement('div');d.setAttribute('role','status');d.setAttribute('aria-live','polite');d.style.cssText='position:fixed;top:1rem;right:1rem;background:var(--warn);color:#000;padding:1rem;border-radius:8px;z-index:9999;font-weight:600;animation:fadeIn 0.3s';d.textContent=ach.icon+' '+ach.name+'!';document.body.appendChild(d);setTimeout(()=>d.remove(),3000)}
+function toast(ach){if(!ach)return;const stack=document.getElementById('toast-stack');if(!stack)return;const d=document.createElement('div');d.setAttribute('role','status');d.setAttribute('aria-live','polite');d.style.cssText='background:var(--warn);color:#000;padding:1rem;border-radius:8px;font-weight:600;animation:fadeIn 0.3s;box-shadow:0 4px 12px rgba(0,0,0,.3)';d.textContent=ach.icon+' '+ach.name+'!';stack.appendChild(d);setTimeout(()=>d.remove(),3000)}
 function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.add('hidden'));document.getElementById(id).classList.remove('hidden')}
 function readinessScore(){
   const modPct=MODS.length?S.done.length/MODS.length*100:0;
