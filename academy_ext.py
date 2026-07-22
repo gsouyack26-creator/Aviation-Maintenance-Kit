@@ -26,12 +26,14 @@ EXT_MODULES = [
       {"heading": "Key Terms", "body": "<b>Datum</b> - reference plane. <b>Arm</b> - distance from datum. <b>Moment</b> = weight x arm. <b>CG</b> = total moment / total weight. <b>Empty weight</b>, <b>useful load</b>, <b>MTOW</b> (max takeoff weight). Forward/aft CG limits from TCDS."},
       {"heading": "Weighing Procedure", "body": "Level the aircraft, use calibrated scales at each wheel/jack point. Subtract tare. Drainable fuel out (or note), full oil. Compute empty weight and empty-weight CG. Record in the aircraft records."},
       {"heading": "Adverse Loading & Ballast", "body": "Check most-forward and most-aft load cases stay within envelope. <b>Ballast</b> (permanent or temporary) corrects out-of-limit CG - must be placarded and secured. Equipment removal can shift CG dangerously."}
-    ],
+    ,
+      {"heading": "Worked CG Example", "body": "Empty weight 1400 lb at arm 40 in gives moment 56,000 lb-in. Add pilot 170 lb at arm 37 = 6,290 lb-in. Add fuel 180 lb at arm 48 = 8,640 lb-in. Total weight 1750 lb, total moment 70,930 lb-in. <b>CG = 70,930 / 1750 = 40.5 in</b> - compare against the TCDS forward/aft limits to confirm the loading is legal before flight."}],
     "quiz": [
       {"q": "Moment equals:", "choices": ["Weight / arm","Weight x arm","Arm / weight","Weight + arm"], "answer": 1, "explain": "Moment = weight x arm (a torque about the datum)."},
       {"q": "CG is calculated as:", "choices": ["Total weight / total moment","Total moment / total weight","Arm x datum","Weight x MTOW"], "answer": 1, "explain": "CG = total moment divided by total weight."},
       {"q": "The datum is:", "choices": ["The heaviest point","A reference plane for measurements","The CG","The tail"], "answer": 1, "explain": "The datum is a reference plane from which all arms are measured."},
       {"q": "Ballast must be:", "choices": ["Loose in the cabin","Placarded and secured","Painted red","Removed for flight"], "answer": 1, "explain": "Permanent/temporary ballast must be secured and placarded per approved data."},
+      {"q": "Empty weight is 1400 lb at arm 40 in. What is the moment?", "choices": ["35 lb-in","1440 lb-in","56,000 lb-in","1360 lb-in"], "answer": 2, "explain": "Moment = weight x arm = 1400 x 40 = 56,000 lb-in."},
       {"q": "When must W&B be redone?", "choices": ["Every flight","After major repair/alteration or equipment change","Only at annual","Never"], "answer": 1, "explain": "Reweigh or recompute after major repairs, alterations, or equipment changes."}
     ]
   }
@@ -59,12 +61,14 @@ EXT_MODULES = [
       {"heading": "SHELL & Error Chains", "body": "The <b>SHELL model</b>: Software, Hardware, Environment, Liveware (people) - errors happen at interfaces. Most accidents are a <b>chain</b> of small failures; breaking one link prevents the event. Swiss-cheese model of layered defenses."},
       {"heading": "Safety Nets", "body": "<b>Checklists</b>, work-cards, and sign-offs. Independent inspection of critical items (flight controls). <b>Fatigue management</b> - shift limits. <b>Just culture</b> - report errors without blame to learn. Proper documentation prevents repeat mistakes."},
       {"heading": "Shop Safety & PPE", "body": "Eye/hearing/respiratory protection. <b>Lockout/tagout</b> for energized systems. SDS/HazMat handling. Compressed-gas and battery-acid precautions. Confined-space (fuel tank) entry procedures. Proper lifting and FOD discipline."}
-    ],
+    ,
+      {"heading": "Applying Human Factors Day to Day", "body": "A short <b>pre-task risk brief</b> - reviewing the job, hazards, and required tools/parts before starting - catches many errors before they happen. <b>Independent inspection</b> on flight-critical items (like control cable rigging) adds a second set of eyes. When interrupted mid-task, always re-verify the last completed step before continuing rather than assuming where you left off - interruption-driven errors are one of the most common causes of maintenance mistakes."}],
     "quiz": [
       {"q": "How many items in the Dirty Dozen?", "choices": ["10","12","14","6"], "answer": 1, "explain": "The Dirty Dozen is 12 human-factors error precursors."},
       {"q": "The SHELL model's second L is:", "choices": ["Logic","Liveware (people)","Loading","Lift"], "answer": 1, "explain": "SHELL = Software, Hardware, Environment, Liveware - the human element."},
       {"q": "A just culture encourages:", "choices": ["Hiding mistakes","Reporting errors to learn without blame","Punishing all errors","Ignoring reports"], "answer": 1, "explain": "Just culture invites honest error reporting so the system can improve."},
       {"q": "The Swiss-cheese model describes:", "choices": ["Cheese storage","Layered defenses with holes that can align","Fuel filtering","A rivet pattern"], "answer": 1, "explain": "Accidents occur when holes in successive defensive layers align."},
+      {"q": "After being interrupted in the middle of a task, a mechanic should:", "choices": ["Continue from memory","Re-verify the last completed step before continuing","Restart the whole job from scratch every time","Ask someone else to guess where they left off"], "answer": 1, "explain": "Interruptions are a leading cause of maintenance error; re-checking the last completed step before resuming prevents skipped or duplicated actions."},
       {"q": "Lockout/tagout is used to:", "choices": ["Label parts","Prevent accidental energizing of systems","Track tools","Log hours"], "answer": 1, "explain": "LOTO isolates and secures energy sources so a system can't be activated during work."}
     ]
   }
@@ -76,12 +80,14 @@ EXT_MODULES = [
       {"heading": "Fluids - NEVER MIX", "body": "<b>MIL-H-5606</b> (mineral, red), <b>MIL-H-83282</b> (fire-resistant mineral, red), <b>Skydrol/phosphate-ester</b> (purple, transport category). Mixing types destroys seals. Skydrol is corrosive to skin/paint - full PPE. Match seal material (Buna vs EPDM/butyl)."},
       {"heading": "Components", "body": "Reservoir, engine/electric <b>pump</b>, filters, <b>selector/control valves</b>, actuators, <b>accumulator</b> (stores pressure, dampens surges - precharged with nitrogen/air), pressure relief valve, gauges. Open-center vs closed-center systems."},
       {"heading": "Pneumatics & Servicing", "body": "Some aircraft use high-pressure air (backup gear/brakes) or engine <b>bleed air</b> (pressurization, anti-ice, start). Moisture removal is critical. Bleed air off before servicing. Depressurize and verify zero before opening any line."}
-    ],
+    ,
+      {"heading": "Troubleshooting Hydraulic Faults", "body": "<b>Spongy or slow actuation</b> usually means air trapped in the system - bleed at the highest point. <b>Erratic pressure/noise</b> can indicate a failing pump or clogged filter. <b>Slow gear extension</b> may be low fluid, a restricted line, or a weak accumulator precharge. Always relieve pressure and verify zero before opening any line, and trace leaks to their source rather than just topping off fluid."}],
     "quiz": [
       {"q": "Hydraulics rely on which principle?", "choices": ["Bernoulli's","Pascal's Law","Ohm's Law","Charles' Law"], "answer": 1, "explain": "Pascal's Law - confined fluid transmits pressure equally, enabling force multiplication."},
       {"q": "Skydrol is what fluid type?", "choices": ["Mineral","Vegetable","Phosphate-ester","Synthetic oil"], "answer": 2, "explain": "Skydrol is a phosphate-ester fluid used in transport aircraft - corrosive, needs PPE."},
       {"q": "An accumulator does what?", "choices": ["Filters fluid","Stores pressure and dampens surges","Cools the fluid","Measures flow"], "answer": 1, "explain": "The accumulator stores hydraulic pressure and absorbs pressure spikes; it's precharged with gas."},
       {"q": "Mixing hydraulic fluid types causes:", "choices": ["Better performance","Seal damage/system failure","Color change only","Nothing"], "answer": 1, "explain": "Incompatible fluids attack seals - never mix mineral and phosphate-ester types."},
+      {"q": "A hydraulic system that feels spongy or slow to actuate most likely has:", "choices": ["Too much fluid","Air trapped in the system","Excess accumulator precharge","A stuck relief valve open"], "answer": 1, "explain": "Trapped air compresses under load, producing a soft/delayed response - bleed the system at its highest point to remove it."},
       {"q": "Bleed air is taken from:", "choices": ["The battery","The engine compressor","Tires","The reservoir"], "answer": 1, "explain": "Bleed air is high-pressure air tapped from the engine compressor section."}
     ]
   },
@@ -92,12 +98,14 @@ EXT_MODULES = [
       {"heading": "Retraction Systems", "body": "Hydraulic (most), electric, or manual backup. <b>Downlocks/uplocks</b> and <b>WOW (squat) switches</b> prevent inadvertent retraction on the ground. Position indicators (3 green). Emergency free-fall extension. Sequencing of gear doors."},
       {"heading": "Wheels & Tires", "body": "Split rims - <b>deflate before removing bolts</b> (stored energy = deadly). Tire pressure per spec (temperature-corrected). Inspect for cuts, wear, flat spots. Fusible plugs release pressure in overheated wheels. Balance and creep marks."},
       {"heading": "Brakes", "body": "Disc brakes: single/dual/multi-disc; steel or <b>carbon</b>. Hydraulic actuation. <b>Anti-skid</b> systems modulate to prevent lockup. Bleed to remove air. Wear-pin indicators. <b>Hot brakes</b> - approach from fore/aft, not the side (wheel explosion risk)."}
-    ],
+    ,
+      {"heading": "Rigging & Alignment Checks", "body": "After gear component replacement, verify <b>toe-in/toe-out</b> and gear leg alignment per the maintenance manual - misalignment causes uneven tire wear and shimmy. Check strut extension against the servicing chart (correlates to weight and pressure). Confirm door rigging and sequencing so gear doors do not interfere with wheels during retraction/extension."}],
     "quiz": [
       {"q": "An oleo strut is serviced with:", "choices": ["Only air","Nitrogen/air and hydraulic fluid","Only fluid","Grease"], "answer": 1, "explain": "The air-oil oleo strut uses both a gas charge and hydraulic fluid for proper extension/damping."},
       {"q": "The WOW/squat switch prevents:", "choices": ["Overheating","Gear retraction on the ground","Brake fade","Tire wear"], "answer": 1, "explain": "The weight-on-wheels switch inhibits gear retraction while on the ground."},
       {"q": "Before removing split-rim wheel bolts you must:", "choices": ["Heat the tire","Fully deflate the tire","Add air","Spin the wheel"], "answer": 1, "explain": "Deflate first - a pressurized split rim can blow apart with lethal force."},
       {"q": "Anti-skid systems:", "choices": ["Increase speed","Prevent wheel lockup/skidding","Cool tires","Steer the nose"], "answer": 1, "explain": "Anti-skid modulates brake pressure to keep wheels from locking, maximizing braking."},
+      {"q": "Uneven or rapid tire wear on one side of the tread often points to:", "choices": ["Normal wear","Misaligned toe-in/toe-out", "Overinflation only", "A fusible plug issue"], "answer": 1, "explain": "Improper wheel alignment (toe-in/out) scrubs the tire unevenly and should be checked/corrected per the maintenance manual."},
       {"q": "Approach hot brakes from:", "choices": ["The side","Fore or aft, never the side","Directly behind the tire","Any direction"], "answer": 1, "explain": "Overheated wheels can explode radially - stand fore/aft, never to the side."}
     ]
   }
@@ -109,12 +117,14 @@ EXT_MODULES = [
       {"heading": "Gyroscopic & Modern Displays", "body": "Rigidity and precession drive attitude/heading/turn instruments (vacuum or electric). Modern <b>glass cockpits</b> use AHRS, ADC, and EFIS. <b>Static-sensitive</b> electronics - use ESD protection. Software/database currency (nav data cycles)."},
       {"heading": "Communication & Navigation", "body": "VHF comm, transponder (Mode C/S, <b>ADS-B Out</b> required), VOR/ILS/GPS/WAAS. Antenna bonding and placement. EMI/RFI shielding. Under Part 43 avionics installation often needs approved data and possibly a repair station/authorized person."},
       {"heading": "Wiring & Electrical Practices", "body": "Follow AC 43.13-1B ch.11: correct gauge, support every ~24 in, service loops, chafe protection, drip loops, proper terminations. <b>Bonding and grounding</b> for lightning/EMI. Circuit protection sized to wire. Label per diagrams."}
-    ],
+    ,
+      {"heading": "Systematic Avionics Troubleshooting", "body": "Start with the <b>simplest, most likely cause</b>: power, circuit breakers, connectors, and grounds before suspecting an LRU. Use wiring diagrams to trace a signal path and isolate whether the fault is upstream (sensor/source) or downstream (indicator/display). Built-in test equipment (<b>BITE</b>) on modern systems can log fault codes - always cross-check BITE codes against the maintenance manual rather than swapping boxes blindly."}],
     "quiz": [
       {"q": "The pitot tube senses:", "choices": ["Static pressure","Ram (total) pressure","Temperature","Voltage"], "answer": 1, "explain": "Pitot senses ram/total pressure; static ports sense ambient. Together they drive the air data instruments."},
       {"q": "Which instruments use the static system?", "choices": ["Tachometer","Airspeed, altimeter, VSI","Oil pressure","Ammeter"], "answer": 1, "explain": "Airspeed, altimeter, and VSI all reference static (and pitot for airspeed) pressure."},
       {"q": "ADS-B Out primarily provides:", "choices": ["Engine data","Position/surveillance broadcast","Fuel flow","Cabin temp"], "answer": 1, "explain": "ADS-B Out broadcasts GPS-derived position for ATC surveillance - now required airspace."},
       {"q": "Gyro instruments rely on:", "choices": ["Rigidity and precession","Bernoulli","Combustion","Capacitance only"], "answer": 0, "explain": "Gyroscopic rigidity in space and precession drive attitude, heading, and turn indicators."},
+      {"q": "When troubleshooting a suspected avionics fault, the first step should generally be to:", "choices": ["Replace the most expensive LRU", "Check power, breakers, connectors, and grounds", "Reload all software immediately", "Swap boxes with another aircraft"], "answer": 1, "explain": "Simple, common causes (power, breakers, connections, grounds) should be ruled out before condemning an expensive line-replaceable unit."},
       {"q": "Handling avionics boxes requires:", "choices": ["Wet hands","ESD (static) protection","Heating first","No precautions"], "answer": 1, "explain": "Electronics are static-sensitive; use ESD straps/mats to avoid latent damage."}
     ]
   },
@@ -125,12 +135,14 @@ EXT_MODULES = [
       {"heading": "Carburetors", "body": "<b>Float-type</b> meters fuel via venturi suction. Main hazard: <b>carburetor icing</b> (temperature drop from vaporization/pressure) - use <b>carb heat</b>. Mixture control for altitude. Idle cutoff for shutdown. Accelerator pump for throttle transients."},
       {"heading": "Fuel Injection", "body": "Continuous-flow (Bendix/Continental) meters fuel to each cylinder - no carb ice, better distribution. Turbine engines use <b>fuel control units / FADEC</b> scheduling fuel with rpm, temp, and air data. Fuel nozzles atomize into combustors."},
       {"heading": "Fuel Contamination & Safety", "body": "Water, microbial growth, wrong grade, particulates. <b>Bonding/grounding</b> when fueling. Fire/explosion hazards - tank entry is confined-space with vapor purge. Fuel-quantity systems (float or capacitance). Filter bypass warnings."}
-    ],
+    ,
+      {"heading": "Fuel Starvation Troubleshooting", "body": "Common causes of fuel-flow problems include a clogged filter/strainer, a failed boost pump, a stuck selector valve, a vented cap causing siphoning, or <b>vapor lock</b> (fuel boiling in the line from heat, dropping flow). Cross-feed and selector positions must be verified after any fuel-system maintenance. Always check for water/contamination first - it is the most common and easiest-to-find cause of engine roughness or flow interruption."}],
     "quiz": [
       {"q": "Carburetor icing is countered with:", "choices": ["Mixture rich","Carburetor heat","More RPM","Fuel additive"], "answer": 1, "explain": "Carb heat supplies warm air to melt/prevent ice from the temperature drop in the venturi."},
       {"q": "Sump drains are checked for:", "choices": ["Oil level","Water and sediment","Voltage","Tire pressure"], "answer": 1, "explain": "Draining sumps removes water and sediment that settle at the tank low point."},
       {"q": "Continuous-flow fuel injection advantage over carbs:", "choices": ["Cheaper","No carb ice, better fuel distribution","Lighter only","Louder"], "answer": 1, "explain": "Injection eliminates carburetor icing and distributes fuel more evenly to cylinders."},
       {"q": "Turbine fuel scheduling is managed by:", "choices": ["A carburetor","Fuel control unit / FADEC","The pilot manually only","A magneto"], "answer": 1, "explain": "The FCU or FADEC schedules fuel with rpm, temperature, and air data inputs."},
+      {"q": "Vapor lock in a fuel system is best described as:", "choices": ["Water trapped in the tank", "Fuel boiling in the line, interrupting flow", "A stuck selector valve", "Microbial growth in the tank"], "answer": 1, "explain": "Vapor lock occurs when fuel in the line gets hot enough to boil, forming vapor bubbles that block liquid fuel flow to the engine."},
       {"q": "Fuel tank entry is:", "choices": ["Routine, no precautions","A confined space requiring vapor purge","Done while fueling","Never allowed"], "answer": 1, "explain": "Integral tank entry is confined-space work - purge vapors, monitor, and use safety attendants."}
     ]
   }

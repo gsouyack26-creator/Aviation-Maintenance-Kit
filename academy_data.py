@@ -8,12 +8,14 @@ MODULES = [
       {"heading": "Get Your Free Textbooks", "body": "Download from FAA Handbooks page:<ul><li><b>FAA-H-8083-30B</b> AMTH General</li><li><b>FAA-H-8083-31B</b> AMTH Airframe</li><li><b>FAA-H-8083-32B</b> AMTH Powerplant</li><li><b>AC 43.13-1B</b> Acceptable Methods</li></ul>Bookmark <b>eCFR Title 14</b> and <b>FAA DRS</b>."},
       {"heading": "Safety Mindset", "body": "<b>FOD</b> (Foreign Object Damage) - account for every tool/part. The <b>Dirty Dozen</b> human-factors errors: communication, complacency, knowledge, distraction, teamwork, fatigue, resources, pressure, assertiveness, stress, awareness, norms. <i>If it is not documented, it did not happen.</i>"},
       {"heading": "Course Road Map", "body": "20 modules across 3 tracks (~180 study hours). Each has lessons, formulas, labs, and quizzes. Complete all + pass the Final Exam for your certificate."}
-    ],
+    ,
+      {"heading": "Career Pathways", "body": "A&P mechanics work across very different environments: <b>general aviation (GA) shops</b> (varied, hands-on, small aircraft), <b>Part 121 airlines</b> (structured, high-volume, specialized line/heavy maintenance), <b>Part 135 charter/cargo</b>, corporate/business aviation, and <b>repair stations</b> (Part 145) doing component overhaul. Many mechanics later pursue an <b>Inspection Authorization (IA)</b>, move into avionics specialization, or transition into quality, training, or management roles."}],
     "quiz": [
       {"q": "What do A and P stand for?", "choices": ["Airframe & Powerplant","Aviation & Propulsion","Assembly & Parts","Aerospace & Performance"], "answer": 0, "explain": "A&P = Airframe and Powerplant ratings on an FAA Mechanic Certificate."},
       {"q": "Which AC is the shop bible for repair methods?", "choices": ["AC 91-67","AC 43.13-1B","AC 20-62","AC 65-12"], "answer": 1, "explain": "AC 43.13-1B covers acceptable methods, techniques, and practices."},
       {"q": "What does FOD stand for?", "choices": ["Flight Ops Directive","Foreign Object Damage/Debris","Fuel-Oil Distribution","Federal Ops Document"], "answer": 1, "explain": "FOD = Foreign Object Damage/Debris. Loose items in an engine can be catastrophic."},
       {"q": "How many A&P knowledge domains?", "choices": ["2","3","4","5"], "answer": 1, "explain": "Three: General, Airframe, Powerplant."},
+      {"q": "Which of these best describes a Part 145 repair station?", "choices": ["An airline flight department", "A certificated organization authorized to perform maintenance/overhaul under FAA oversight", "A flight training school", "An aircraft manufacturer only"], "answer": 1, "explain": "A Part 145 repair station is an FAA-certificated organization authorized to perform specific maintenance, repair, or overhaul work."},
       {"q": "Which is NOT a Dirty Dozen item?", "choices": ["Fatigue","Complacency","Enthusiasm","Distraction"], "answer": 2, "explain": "Enthusiasm is not one of the 12 human-factors error precursors."}
     ]
   },
@@ -25,12 +27,14 @@ MODULES = [
       {"heading": "Gas Laws", "body": "Critical for pressurization/pneumatics/oxygen:<ul><li><b>Boyle:</b> P1V1 = P2V2 (temp constant)</li><li><b>Charles:</b> V1/T1 = V2/T2 (press constant)</li><li><b>Combined:</b> P1V1/T1 = P2V2/T2</li></ul>Use absolute temperature (Kelvin/Rankine)."},
       {"heading": "Heat & Expansion", "body": "Transfer: conduction, convection, radiation. Materials expand when heated - matters for fits, clearances, cable tension (temp-correct tensiometer readings)."},
       {"heading": "Bernoulli & Pascal", "body": "<b>Bernoulli:</b> faster flow = lower pressure (lift, carburetors, venturi). <b>Pascal:</b> pressure in confined fluid transmits equally (hydraulic systems multiply force)."}
-    ],
+    ,
+      {"heading": "Applying the Formulas", "body": "A wrench with a 10-inch handle applying 20 lb of force produces a torque of <b>200 in-lb</b> (Torque = Force x distance) - the same principle behind a torque wrench's specification. Mechanical advantage from a pulley or lever lets a smaller force move a larger load over a longer distance, but total work stays the same (ignoring friction) - this is why calculating the right tool or technique for a job matters as much as brute force."}],
     "quiz": [
       {"q": "Cylinder displacement formula:", "choices": ["(pi/4) x bore^2 x stroke x #cyl","pi x bore x stroke","bore^2 x stroke / 4","pi/2 x bore x stroke"], "answer": 0, "explain": "Displacement = (pi/4) x bore^2 x stroke x number of cylinders."},
       {"q": "In Boyle's Law, what is constant?", "choices": ["Pressure","Volume","Temperature","Mass"], "answer": 2, "explain": "Boyle's Law: P1V1=P2V2 when temperature is constant."},
       {"q": "Pascal's Law is the basis for:", "choices": ["Electrical systems","Hydraulic systems","Ignition","Induction"], "answer": 1, "explain": "Pascal's Law - pressure transmits equally in confined fluid - is the principle behind hydraulics."},
       {"q": "Work equals:", "choices": ["Force x time","Force x distance","Power x distance","Mass x velocity"], "answer": 1, "explain": "Work = Force x distance (W=Fd)."},
+      {"q": "A wrench with a 10-inch handle applies 20 lb of force to a bolt. The torque produced is:", "choices": ["2 in-lb","20 in-lb","200 in-lb","2000 in-lb"], "answer": 2, "explain": "Torque = Force x distance = 20 lb x 10 in = 200 in-lb."},
       {"q": "Bernoulli explains:", "choices": ["Hydraulic multiplication","How lift is generated","Thermal expansion","Ohm's Law"], "answer": 1, "explain": "Faster flow = lower pressure explains how wings generate lift."}
     ]
   },
@@ -59,12 +63,14 @@ MODULES = [
       {"heading": "Batteries", "body": "<b>Lead-acid:</b> check specific gravity with hydrometer. <b>Ni-Cad:</b> lighter, higher discharge - but <b>THERMAL RUNAWAY</b> danger (cascading overheat = fire). Monitor cell temps during charging."},
       {"heading": "Generation & Distribution", "body": "14V or 28V DC bus systems. Alternators (engine-driven). Voltage regulators. Essential/main/avionics buses with tie relays. External power (GPU) for ground ops."},
       {"heading": "Wiring & Protection", "body": "AWG sizing by current + voltage drop. Bundle/route to avoid chafe/heat. <b>Circuit breakers</b> (never hold in a popping breaker!). Fuses. Mil-spec connectors. Read schematics."}
-    ],
+    ,
+      {"heading": "Circuit Troubleshooting", "body": "A <b>voltage-drop test</b> (checking voltage loss across a connection or wire under load) finds high-resistance faults that a simple continuity check can miss. Compare live circuit voltage at the load to the source - excessive drop points to a bad connector, corroded ground, or damaged wire. Always verify continuity to ground and check for shorts to structure before assuming a component itself has failed."}],
     "quiz": [
       {"q": "28V bus, 7 ohm load. Current?", "choices": ["4 A","196 A","0.25 A","35 A"], "answer": 0, "explain": "I = E/R = 28/7 = 4 amps."},
       {"q": "In parallel, what stays constant?", "choices": ["Current","Resistance","Voltage","Power"], "answer": 2, "explain": "Parallel: voltage is the same across all branches."},
       {"q": "Aircraft AC frequency:", "choices": ["60 Hz","50 Hz","400 Hz","1000 Hz"], "answer": 2, "explain": "400 Hz allows smaller/lighter transformers and motors."},
       {"q": "Ni-Cad danger:", "choices": ["Sulfation","Thermal runaway","Freezing","Reverse polarity"], "answer": 1, "explain": "Ni-Cad batteries can experience thermal runaway - cascading overheat causing fire."},
+      {"q": "A voltage-drop test is useful because it can detect:", "choices": ["Only a completely open circuit", "High-resistance connections that a simple continuity check may miss", "Battery amp-hour capacity only", "AC frequency drift"], "answer": 1, "explain": "Voltage-drop testing under load reveals corroded or loose connections that still pass a basic continuity check but cause excessive resistance."},
       {"q": "Never do this with a popping breaker:", "choices": ["Replace it","Check circuit","Hold it in","Record it"], "answer": 2, "explain": "Holding in a popping breaker overrides protection against an active fault - fire risk."}
     ]
   },
@@ -76,12 +82,14 @@ MODULES = [
       {"heading": "Magnetic Particle (MT)", "body": "Surface/near-surface flaws in <b>ferrous metals only</b>. Magnetize part, apply iron particles, particles gather at cracks. Circular mag finds lengthwise cracks; longitudinal finds transverse. <b>Demagnetize</b> after."},
       {"heading": "Eddy Current (ET)", "body": "Surface/subsurface cracks, conductivity, coating thickness on any <b>conductive</b> material. Coil generates field; defects change impedance. No contact needed. Heavy use around fastener holes."},
       {"heading": "Ultrasonic & Radiographic", "body": "<b>UT:</b> sound waves reflect off internal flaws; measures thickness. Great for composites/forgings. <b>RT (X-ray):</b> radiation through part onto film. Shows internal structure. Requires radiation safety certification."}
-    ],
+    ,
+      {"heading": "Selecting the Right Method", "body": "Choice of NDT method depends on the material, flaw type, and location. <b>Magnetic particle</b> only works on ferrous metals. <b>Dye penetrant</b> finds only surface-breaking flaws in any non-porous material. <b>Eddy current</b> is excellent for surface/near-surface cracks in conductive metals (including aluminum) without couplant. <b>Ultrasonic</b> finds subsurface flaws and measures thickness in any material. <b>Radiographic (X-ray)</b> reveals internal voids/inclusions but requires strict radiation safety controls."}],
     "quiz": [
       {"q": "Which NDT works ONLY on ferrous metals?", "choices": ["Dye penetrant","Eddy current","Magnetic particle","Ultrasonic"], "answer": 2, "explain": "Magnetic particle needs a magnetizable (ferrous) part."},
       {"q": "Dye penetrant finds:", "choices": ["Internal voids","Subsurface cracks","Surface-breaking cracks only","Corrosion under paint"], "answer": 2, "explain": "Penetrant only enters surface-breaking discontinuities."},
       {"q": "After MT inspection you must:", "choices": ["Repaint","Demagnetize","Heat-treat","Replace"], "answer": 1, "explain": "Residual magnetism attracts chips and interferes with instruments."},
       {"q": "Which method measures remaining wall thickness?", "choices": ["Visual","Dye penetrant","Ultrasonic","Magnetic particle"], "answer": 2, "explain": "Ultrasonic precisely measures remaining material thickness."},
+      {"q": "To detect a subsurface crack in an aluminum structure, the most appropriate NDT method would be:", "choices": ["Magnetic particle inspection", "Dye penetrant inspection", "Ultrasonic or eddy current inspection", "Visual inspection only"], "answer": 2, "explain": "Magnetic particle only works on ferrous metal, and dye penetrant only finds surface-breaking flaws - ultrasonic or eddy current can detect subsurface flaws in aluminum."},
       {"q": "Most commonly used inspection method:", "choices": ["Radiographic","Eddy current","Visual","Ultrasonic"], "answer": 2, "explain": "Visual inspection is the foundation - performed on every task."}
     ]
   },
@@ -93,12 +101,14 @@ MODULES = [
       {"heading": "Loads & Stations", "body": "5 load types: tension, compression, shear, bending, torsion. <b>Station numbering:</b> FS (fuselage), BL (buttock line L/R), WL (waterline vertical) - locates any point precisely."},
       {"heading": "Control Systems", "body": "Primary: aileron (roll), elevator (pitch), rudder (yaw). Secondary: flaps, slats, trim tabs, spoilers. Types: cable/pulley, push-pull rod, torque tube, fly-by-wire."},
       {"heading": "Rigging", "body": "Aligning controls to spec. Cable tension via <b>tensiometer</b> (temp-corrected). Turnbuckles (safetied). Surface travel via protractor/fixture. <b>Balance</b> after repair/paint to prevent <b>flutter</b>."}
-    ],
+    ,
+      {"heading": "Repair Philosophy", "body": "A structural repair must restore the original <b>strength, stiffness, contour, and corrosion protection</b> without adding excessive weight. A <b>doubler</b> reinforces a damaged area by spreading load around the repair; its size and rivet pattern come from approved data (AC 43.13-1B or manufacturer structural repair manual), not guesswork. Repairs must never be based on \"it looks strong enough\" - use approved data for material, thickness, and fastener pattern."}],
     "quiz": [
       {"q": "Semi-monocoque uses:", "choices": ["Skin only","Skin + frames + stringers","Truss tubes","Composites only"], "answer": 1, "explain": "Semi-monocoque: skin shares load with internal frames, longerons, and stringers."},
       {"q": "Primary wing bending load carrier:", "choices": ["Ribs","Skin","Spar","Stringers"], "answer": 2, "explain": "Spars are the main beams carrying wing bending loads."},
       {"q": "What measures cable tension?", "choices": ["Protractor","Torque wrench","Tensiometer","Dynamometer"], "answer": 2, "explain": "A tensiometer measures cable tension (correct for temperature)."},
       {"q": "Why balance control surfaces after repaint?", "choices": ["Appearance","Prevent flutter","Reduce drag","Weight savings"], "answer": 1, "explain": "Paint shifts CG; if aft of hinge line, destructive flutter can occur."},
+      {"q": "The primary purpose of a doubler in a structural sheet metal repair is to:", "choices": ["Improve appearance only", "Spread load around the damaged/repaired area to restore strength", "Reduce weight", "Provide a mounting point for hardware"], "answer": 1, "explain": "A doubler reinforces the repair area, redistributing stress around the damage per approved repair data."},
       {"q": "Wet wing means:", "choices": ["Wing in rain","Wing sealed as fuel tank","Deice boots","Composite wing"], "answer": 1, "explain": "Integral tank - the sealed wing structure IS the fuel container."}
     ]
   },
@@ -110,12 +120,14 @@ MODULES = [
       {"heading": "Rivet Types", "body": "AN470 (universal), AN426 (flush). Alloy codes: <b>AD=2117</b> (drives as-is), <b>DD=2024</b> (ice-box: heat-treat, refrigerate, drive cold within 20 min). Blind rivets (Cherry/Hi-Lok) where bucking bar cannot reach."},
       {"heading": "Riveting Procedure", "body": "1. Drill (rivet dia + 0.003 clearance). 2. Deburr both sides. 3. Cleco (temp fasteners). 4. Buck with gun + bar (perpendicular). 5. Inspect: shop head 1.5Dx0.5D, no cracks, flush for AN426."},
       {"heading": "Repair Philosophy", "body": "Restore/exceed original strength. Match rivet pattern. <b>Never reduce edge distance.</b> Follow SRM or AC 43.13-1B. <b>Stop-drill</b> crack ends immediately. Classify: negligible, repairable, replace."}
-    ],
+    ,
+      {"heading": "Layout & Fastening Practice", "body": "<b>Clecos</b> temporarily hold sheets aligned and under clamping pressure during drilling and fitting, before final rivets are installed - this prevents holes from being drilled slightly out of alignment. Deburr every drilled hole to remove sharp edges that could start a crack. Dimple or countersink for flush fasteners per the thickness and rivet type specified in the repair data, and always match existing hole patterns exactly when replacing a panel."}],
     "quiz": [
       {"q": "For 0.050 in skin, rivet diameter:", "choices": ["1/16","3/32","5/32","1/4"], "answer": 2, "explain": "3 x 0.050 = 0.150 -> closest standard is 5/32 (0.156)."},
       {"q": "Setback for 90 deg, R=0.125, T=0.032:", "choices": ["0.093","0.125","0.157","0.250"], "answer": 2, "explain": "Setback = R+T = 0.125+0.032 = 0.157 inches."},
       {"q": "DD rivet must be:", "choices": ["Driven anytime","Heat-treated and refrigerated, driven cold","Driven hot","Used on steel only"], "answer": 1, "explain": "DD=2024 (ice-box). Heat-treat, refrigerate, drive within ~20 min before it hardens."},
       {"q": "Min edge distance for 1/8 in rivet:", "choices": ["1/8","3/16","1/4 to 5/16","1/2"], "answer": 2, "explain": "Edge = 2D to 2.5D. For 0.125: 0.250 to 0.3125 (1/4 to 5/16)."},
+      {"q": "Clecos are used during sheet metal repair primarily to:", "choices": ["Permanently fasten the repair", "Temporarily hold sheets aligned and clamped before final riveting", "Measure rivet spacing", "Deburr drilled holes"], "answer": 1, "explain": "Clecos are temporary fasteners that hold layers in alignment and clamped together while drilling/fitting, and are removed as final rivets are installed."},
       {"q": "First action for a skin crack:", "choices": ["Rivet a patch","Stop-drill crack ends","Remove panel","Ignore if small"], "answer": 1, "explain": "Stop-drilling eliminates stress concentration at crack tip, preventing propagation."}
     ]
   },
@@ -127,12 +139,14 @@ MODULES = [
       {"heading": "Fuel Systems", "body": "Boost pumps, selectors, strainers/sumps, cross-feed. Tanks: integral/bladder/rigid. Sump for water. Grades: 100LL (blue avgas), Jet A (clear/straw). <b>NEVER mis-fuel.</b> Ground/bond during fueling."},
       {"heading": "Environmental", "body": "<b>Pressurization:</b> bleed air, outflow valve, cabin altitude 6-8000 ft at FL350. <b>AC:</b> air-cycle packs or vapor-cycle. <b>Oxygen:</b> gaseous or chemical. <b>No oil/grease near O2</b> = auto-ignition risk!"},
       {"heading": "Ice/Rain & Fire", "body": "Anti-ice (prevent) vs de-ice (remove): boots, bleed air heat, electric heat, TKS weeping wing. Fire: continuous-loop detection, Halon bottles/squibs, firewall shutoff valves. Test per schedule."}
-    ],
+    ,
+      {"heading": "System Interdependencies", "body": "Airframe systems often share resources and can fail together in non-obvious ways: a hydraulic pump failure can affect both brakes and gear retraction if they share a system; a bleed-air leak can trigger both a pressurization fault and an overheat warning in the same bay. When troubleshooting one system's fault, always consider what else shares its power source, hydraulic system, or bleed-air supply - fixing the wrong system wastes time and can mask the real problem."}],
     "quiz": [
       {"q": "Skydrol requires:", "choices": ["No special handling","PPE - corrosive","Heating","Mixing with mineral oil"], "answer": 1, "explain": "Skydrol (phosphate-ester) is corrosive to skin, eyes, paint. PPE mandatory."},
       {"q": "Aircraft tires inflated with:", "choices": ["Air","Nitrogen","Helium","CO2"], "answer": 1, "explain": "Nitrogen is inert - no moisture, stable pressure with temp change."},
       {"q": "Why no oil near O2 fittings?", "choices": ["Clogs system","Auto-ignition/explosion","Reduces flow","Voids warranty"], "answer": 1, "explain": "Oil/grease + high-pressure O2 can spontaneously ignite explosively."},
       {"q": "Squat switch prevents:", "choices": ["Overspeed","Gear retraction on ground","Depressurization","Cross-feed"], "answer": 1, "explain": "Weight-on-wheels switch inhibits gear retract while on the ground."},
+      {"q": "When multiple aircraft systems fail or malfunction at the same time, a mechanic should first consider that they:", "choices": ["Are always unrelated coincidences", "May share a common power source, hydraulic system, or air supply", "Should each be replaced individually without investigation", "Indicate a software update is needed"], "answer": 1, "explain": "Shared resources (hydraulic systems, electrical buses, bleed air) can cause seemingly unrelated systems to fail together from a single root cause."},
       {"q": "Deice boots work by:", "choices": ["Heating","Inflating to crack ice","Chemical spray","Vibration"], "answer": 1, "explain": "Boots inflate and flex to break the ice bond; ice sheds in airstream."}
     ]
   },
@@ -144,12 +158,14 @@ MODULES = [
       {"heading": "Fuel & Induction", "body": "Air filter, carb heat/alternate air, manifold. <b>Carb icing</b> even in warm humid air. Float/pressure carbs, continuous-flow injection. Mixture control (rich for power, lean for cruise). Turbo/supercharging."},
       {"heading": "Ignition", "body": "<b>Dual magnetos</b> - engine-driven, self-contained. Two plugs/cyl for redundancy + better combustion. <b>E-gap timing</b> (internal) + <b>mag-to-engine timing</b> (core task). Spark plugs: gap, reach, heat range, rotation."},
       {"heading": "Lube & Cooling", "body": "Wet sump (opposed) vs dry sump (radial). Oil: lubricate, cool, clean, seal. Filter, cooler, SOAP analysis. <b>Air cooling:</b> cylinder fins + <b>baffles</b> (direct air) + <b>cowl flaps</b> (regulate). Missing baffles = hot spots = failure."}
-    ],
+    ,
+      {"heading": "Common Failure Modes", "body": "<b>Detonation</b> (uncontrolled explosive combustion, often from low-octane fuel, over-lean mixture, or excessive heat) can destroy pistons and rings quickly. <b>Pre-ignition</b> (combustion starting before the spark from a hot spot like a glowing deposit) causes similar damage. <b>Shock cooling</b> from rapid power reduction can crack cylinders. Recognizing detonation/pre-ignition symptoms (rough running, high CHT, power loss) early prevents catastrophic engine damage."}],
     "quiz": [
       {"q": "Crank revolutions per power stroke (per cyl):", "choices": ["1","2","4","0.5"], "answer": 1, "explain": "4-stroke: one power stroke every 720 deg (2 full revolutions)."},
       {"q": "Compression ratio:", "choices": ["Bore/stroke","V(BDC)/V(TDC)","Intake P/exhaust P","Power/weight"], "answer": 1, "explain": "CR = total volume at BDC divided by clearance volume at TDC."},
       {"q": "Why dual magnetos?", "choices": ["More power only","Redundancy + better combustion","Less weight","Legal only"], "answer": 1, "explain": "Redundancy (one failing is survivable) plus two sparks give more complete combustion."},
       {"q": "Carb icing can occur in:", "choices": ["Freezing only","Above 80F only","Warm humid (50-70F, moist)","Altitude only"], "answer": 2, "explain": "Venturi + fuel evaporation drops carb temp 60F+ below ambient. Common at 50-70F with humidity."},
+      {"q": "Detonation in a reciprocating engine is most commonly caused by:", "choices": ["Overly rich mixture and low RPM", "Low-octane fuel, excessive heat, or an over-lean mixture", "Cold weather starts", "Normal cruise power settings"], "answer": 1, "explain": "Detonation results from conditions that raise cylinder temperature/pressure beyond the fuel's ability to burn smoothly - low octane fuel, excess heat, or over-lean mixtures are common causes."},
       {"q": "Missing baffles cause:", "choices": ["Over-cooling","Localized overheating/failure","Oil leaks only","No effect"], "answer": 1, "explain": "Baffles direct cooling air. Missing = no directed airflow = hot spots = cracking."}
     ]
   },
@@ -161,12 +177,14 @@ MODULES = [
       {"heading": "Engine Types", "body": "<b>Turbojet:</b> all thrust from exhaust. <b>Turbofan:</b> bypass air (5:1-12:1 ratio) - quiet, efficient, airliners. <b>Turboprop:</b> drives prop via gearbox. <b>Turboshaft:</b> drives shaft (helicopters/APUs)."},
       {"heading": "Systems", "body": "Fuel: FCU or <b>FADEC</b>. Ignition: high-energy igniters (start + continuous mode only - combustion self-sustains). Oil: dry-sump synthetic, <b>chip detectors</b> (metal = wear). Instruments: N1/N2, <b>ITT/EGT</b> (primary limit), torque, fuel flow."},
       {"heading": "Inspection & Faults", "body": "<b>Borescope</b> hot section (cracks/burn/erosion). Start faults: <b>Hot start</b> (over-temp), <b>Hung start</b> (won't accelerate to idle), <b>Wet start</b> (no light-off). <b>Trend monitoring</b> (N1/EGT/vibration over time)."}
-    ],
+    ,
+      {"heading": "Engine Health Monitoring", "body": "<b>Trend monitoring</b> tracks EGT, N1/N2, oil pressure/temp, and fuel flow over time to catch gradual deterioration before it becomes a failure. A slow, steady <b>EGT rise</b> at a given power setting over many flights often signals compressor or turbine efficiency loss (erosion, fouling) long before any single reading would exceed a limit. Borescope inspections combined with trend data give the clearest picture of internal engine condition without teardown."}],
     "quiz": [
       {"q": "Turbine combustion is:", "choices": ["Intermittent","Continuous","Only during start","Cyclic"], "answer": 1, "explain": "Gas turbines burn fuel continuously. All sections operate simultaneously."},
       {"q": "Most common on airliners:", "choices": ["Turbojet","Turboprop","Turbofan","Turboshaft"], "answer": 2, "explain": "Turbofans: bypass air provides quiet, efficient thrust at high bypass ratios."},
       {"q": "Hot start means:", "choices": ["EGT exceeds limit during start","Runs too cool","Oil overheats","Normal warmup"], "answer": 0, "explain": "Temperature exceeds limits during start - too much fuel vs airflow. Can damage hot section."},
       {"q": "Igniters used:", "choices": ["Continuously","Start and continuous-ignition mode only","Never after first start","To cool combustor"], "answer": 1, "explain": "Once lit, combustion is self-sustaining. Igniters fire only for start and CI mode."},
+      {"q": "A gradual, steady rise in EGT at a constant power setting over many flights most likely indicates:", "choices": ["A normal break-in effect with no concern", "Slowly developing compressor or turbine efficiency loss", "A faulty EGT gauge only", "Overly rich fuel scheduling by design"], "answer": 1, "explain": "A slow upward trend in EGT at the same power setting typically reflects gradually declining internal engine efficiency (erosion, fouling, wear) and warrants investigation via trend data and borescope."},
       {"q": "Chip detectors indicate:", "choices": ["Normal ops","Metal wear - investigate","Low oil","Over-temp"], "answer": 1, "explain": "Magnetic plugs capture ferrous particles = internal wear = investigate/overhaul."}
     ]
   },
