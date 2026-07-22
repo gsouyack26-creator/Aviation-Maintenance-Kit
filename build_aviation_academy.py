@@ -1404,12 +1404,6 @@ function boot(){{
   const u=ACCT.users.find(x=>x.id===ACCT.current);
   if(u){{enterApp();}}else{{showGate();}}
 }}
-function toggleTheme(){{
-  const cur=document.body.dataset.theme||'dark';
-  const next=cur==='dark'?'light':'dark';
-  document.body.dataset.theme=next;
-  localStorage.setItem('avia_theme',next);
-}}
 function enterApp(){{load();renderNavForRole();hideGate();renderDash();show('v-dash');}}
 """
 
@@ -1444,8 +1438,7 @@ html = f"""<!DOCTYPE html>
 <button class="nav-btn" onclick="renderCert()">Certificate</button>
 <button class="nav-btn" id="nav-roster" style="display:none" onclick="renderRoster()" aria-label="Roster">&#x1F465; Roster</button>
 <button class="nav-btn" onclick="renderProfile()" id="nav-profile" aria-label="My profile">&#x1F464;</button>
-<button class="nav-btn" onclick="cmdOpen()" title="Command palette (Ctrl+K)">&#x2318;K</button>
-<button class="nav-btn" onclick="toggleTheme()" aria-label="Toggle theme">&#x1F313;</button>
+<button class="nav-btn" onclick="cmdOpen()" title="Command palette (Ctrl+K)" aria-label="Open command palette">&#x2318;K</button>
 <button class="nav-btn" onclick="resetProgress()" title="Reset" aria-label="Reset progress">&#x1F5D1;</button>
 </nav>
 </header>
