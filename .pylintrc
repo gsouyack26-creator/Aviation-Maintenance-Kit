@@ -1,0 +1,34 @@
+[MASTER]
+# See ruff.toml / .flake8 for the same rationale: ruff is this project's
+# authoritative linter and is kept clean every release; pylint's stricter
+# defaults flag this codebase's deliberate, long-standing conventions below.
+
+[FORMAT]
+max-line-length = 200
+# max-module-lines: build_aviation_academy.py (~1.5k lines) is the single
+# build script assembling many data modules into one HTML page; splitting it
+# further would fragment a tightly-coupled template with no real benefit.
+max-module-lines = 2000
+
+[BASIC]
+# Loop-scratch variable names (_t, _m, _id, _mid, _mod, _sec, ...) are a
+# deliberate, consistent convention across academy_data.py's many "Wave N
+# expansion merge" blocks - a leading underscore marks them as throwaway
+# module-level merge variables, not part of the public data API.
+good-names-rgxs=^_[a-zA-Z0-9_]*$
+
+[MESSAGES CONTROL]
+disable=
+    line-too-long,
+    wrong-import-position,
+    invalid-name,
+    too-many-lines
+    # line-too-long: long single-line dict literals holding lesson prose
+    #   text (see .flake8's E501 note) - not a code-readability issue.
+    # wrong-import-position: academy_data.py imports each academy_extN
+    #   module right before its own merge block, by design (see ruff.toml).
+    # invalid-name: covered by good-names-rgxs above, kept disabled as a
+    #   belt-and-suspenders since pylint's naming checks are still noisy
+    #   on some single/double-char loop vars (_t, _m, _id) despite the regex.
+    # too-many-lines: see max-module-lines above; disabled belt-and-suspenders
+    #   in case a future module briefly exceeds even the raised threshold.

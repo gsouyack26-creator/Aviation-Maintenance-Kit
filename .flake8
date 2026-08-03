@@ -1,0 +1,33 @@
+[flake8]
+# Mirrors ruff.toml, this project's authoritative linter (kept clean every
+# release). flake8 (full pycodestyle E1/E2/E3/E5 family) is stricter by
+# default than ruff's default rule selection (E4/E7/E9/F), so without this
+# config it flags this codebase's deliberate, long-standing style:
+max-line-length = 200
+extend-ignore =
+    E402,
+    E231,
+    E203,
+    E201,
+    E122,
+    E128,
+    E131,
+    E305,
+    E302,
+    E501
+    # E501: many *_data.py / *_ext*.py entries are single-line dict literals
+    #       containing long prose (lesson body text), not code - ruff (this
+    #       project's authoritative linter) does not enforce E501 by default
+    #       either, and line-length=200 in ruff.toml governs the formatter,
+    #       not a hard content-line cap.
+    # E402: academy_data.py intentionally imports each academy_extN module
+    #       right before its "Wave N" merge block, at file scope, not at top
+    #       (see ruff.toml comment for the same rule).
+    # E231/E203/E201: the *_data.py / *_ext*.py modules use compact,
+    #       JS/JSON-like dict literals ({"id":"x","name":"y"}) by design,
+    #       matching the JSON that build_aviation_academy.py embeds into the
+    #       generated page's <script> block - not accidental spacing.
+    # E122/E128/E131: continuation-line alignment rules that conflict with
+    #       the same compact multi-line data-literal formatting above.
+    # E305/E302: a handful of intentionally tight blank-line spacing around
+    #       the incremental "Wave N expansion merge" blocks.

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Aviation Maintenance Academy - Wave 10 content expansion pack (EXT19)."""
 EXT19_MODULES = [
     {
         "id": "aircraft_welding_gas",

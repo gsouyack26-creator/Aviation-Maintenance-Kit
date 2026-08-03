@@ -1,6 +1,7 @@
 """Aviation Maintenance Academy - Course Data"""
+from typing import Any
 
-MODULES = [
+MODULES: list[dict[str, Any]] = [
   {
     "id": "orientation", "title": "Orientation & Setup", "track": "general", "icon": "&#x1F9ED;",
     "sections": [
@@ -308,7 +309,7 @@ MODULES = [
   }
 ]
 
-TRACKS = [
+TRACKS: list[dict[str, Any]] = [
     {"id":"general","name":"General","color":"#3b82f6","modules":["orientation","math_physics","materials_hardware","electricity","inspection_ndt","regulations_records"]},
     {"id":"airframe","name":"Airframe","color":"#10b981","modules":["structures","sheet_metal","airframe_systems"]},
     {"id":"powerplant","name":"Powerplant","color":"#f59e0b","modules":["recip_engines","turbine_engines","propellers"]}
@@ -327,7 +328,7 @@ RANKS = [
     {"level":10,"name":"A&P Examiner","xp":4000}
 ]
 
-XP = {"lesson":10,"quiz_perfect":50,"quiz_pass":25,"flashcard":2,"exam_pass":200,"practical_task":15,"focus_session":20}
+XP = {"lesson":10,"quiz_perfect":50,"quiz_pass":25,"flashcard":2,"exam_pass":200,"practical_task":15,"focus_session":20}  # nosec B105 - XP point values, not credentials; "pass" here means passing a quiz/exam
 
 ACHIEVEMENTS = [
     {"id":"first_lesson","name":"First Lesson","desc":"Complete your first lesson","icon":"&#x1F4D6;"},
@@ -840,12 +841,12 @@ GLOSSARY = _deduped_glossary11
 # key convention (found in a Wave 10/11 authoring regression) to the standard
 # {"heading","body"} convention expected by the renderer in build_aviation_academy.py.
 # ---------------------------------------------------------------------------
-for _m in MODULES:
-    for _s in _m["sections"]:
-        if "heading" not in _s and "h" in _s:
-            _s["heading"] = _s.pop("h")
-        if "body" not in _s and "p" in _s:
-            _s["body"] = _s.pop("p")
+for _mod in MODULES:
+    for _sec in _mod["sections"]:
+        if "heading" not in _sec and "h" in _sec:
+            _sec["heading"] = _sec.pop("h")
+        if "body" not in _sec and "p" in _sec:
+            _sec["body"] = _sec.pop("p")
 
 # ---------------------------------------------------------------------------
 # FAA source alignment: stamp each module with a citation to the relevant
@@ -859,14 +860,14 @@ _FAA_HANDBOOK_BY_TRACK = {
     "airframe":   "FAA-H-8083-31 \u2014 Aviation Maintenance Technician Handbook: Airframe",
     "powerplant": "FAA-H-8083-32B \u2014 Aviation Maintenance Technician Handbook: Powerplant",
 }
-_track_of_module = {}
+_track_of_module: dict[str, Any] = {}
 for _t in TRACKS:
     for _mid in _t["modules"]:
         _track_of_module[_mid] = _t["id"]
-for _m in MODULES:
-    if not _m.get("faa_ref"):
-        _trk = _track_of_module.get(_m["id"], _m.get("track"))
-        _m["faa_ref"] = _FAA_HANDBOOK_BY_TRACK.get(_trk, "FAA-H-8083 Series \u2014 Aviation Maintenance Technician Handbook")
+for _mod2 in MODULES:
+    if not _mod2.get("faa_ref"):
+        _trk: Any = _track_of_module.get(_mod2["id"], _mod2.get("track"))
+        _mod2["faa_ref"] = _FAA_HANDBOOK_BY_TRACK.get(_trk, "FAA-H-8083 Series \u2014 Aviation Maintenance Technician Handbook")
 
 # ---------------------------------------------------------------------------
 # Subject Practice Tests feature: add the "Subject Master" achievement,

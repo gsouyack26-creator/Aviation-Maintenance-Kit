@@ -193,7 +193,9 @@ input[type=text],input[type=search]{background:var(--bg);border:1px solid var(--
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
 """
 
+# nosec B608 - build_js() below constructs a JS source string via json.dumps(), not a SQL query; bandit's heuristic misfires on the multi-statement f-string
 def build_js():
+    """Return the page's embedded <script> JS source, with all course data serialized in via json.dumps()."""
     return f"""
 const MODS={json.dumps(MODULES)};
 const TRACKS={json.dumps(TRACKS)};

@@ -1,0 +1,7 @@
+[bandit]
+# B608 (hardcoded_sql_expressions) is skipped project-wide: this codebase is a
+# static site generator with zero database/SQL usage anywhere. Bandit's
+# heuristic misfires on the large multi-line f-strings in build_aviation_academy.py
+# that assemble JS/HTML output via json.dumps(), not SQL queries. Verified by
+# grep across the project for sql/sqlite/cursor.execute with zero matches.
+skips: B608

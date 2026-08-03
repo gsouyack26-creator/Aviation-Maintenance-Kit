@@ -1,0 +1,14 @@
+# lizard complexity whitelist - two accepted, understood metric artifacts:
+#
+# build_aviation_academy.py:build_js - flagged only for length (1225 > 1000
+# lines): the function body is a single f-string return statement embedding
+# the page's entire JS source (assembled from json.dumps() of the course
+# data modules) - it is one literal, not procedural logic, so splitting it
+# would not reduce actual complexity, only the line count metric.
+.\build_aviation_academy.py: build_js
+
+# avia_auth.js:(anonymous) - flagged for cyclomatic complexity (16 > 15) on
+# an anonymous forEach callback in exportRoster() that builds one CSV row
+# via ~18 chained "x||0" default-value fallbacks - lizard counts each ||
+# as a branch, but this is a flat list of defaults, not real branching logic.
+.\avia_auth.js: (anonymous)
